@@ -1,0 +1,160 @@
+:root {
+  --navy: #1a237e;
+  --navy-mid: #24308a;
+  --gold: #d4a017;
+  --cream: #f7f1e3;
+  --ink: #1b1b1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+body {
+  min-height: 100vh;
+}
+
+.hub {
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.hub-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hub-header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--navy);
+}
+
+.hub-header p {
+  margin: 0.5rem 0 0;
+  font-size: 1.05rem;
+}
+
+.hub-section {
+  margin-bottom: 1.75rem;
+}
+
+.hub-section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.85rem;
+}
+
+.card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 2px solid #d9d0bc;
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+.card:hover,
+.card:focus {
+  border-color: var(--navy-mid);
+  outline: none;
+}
+
+.card.selected {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.2);
+}
+
+.card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+
+.card .meta {
+  margin: 0 0 0.45rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card .blurb {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.play-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.play-btn {
+  background: var(--navy-mid);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.7rem 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.play-btn:hover,
+.play-btn:focus {
+  background: var(--navy);
+}
+
+.play-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hub-error {
+  color: #8b1a1a;
+  text-align: center;
+  min-height: 1.4rem;
+  margin: 0.75rem 0 0;
+}
+
+.hub-foot {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.hub-foot a {
+  color: var(--navy);
+}
+
+.hub[hidden],
+#game-root[hidden] {
+  display: none !important;
+}

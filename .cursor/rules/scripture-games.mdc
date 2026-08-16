@@ -1,0 +1,15 @@
+---
+description: scripture-games play and pack constraints
+alwaysApply: true
+---
+
+# scripture-games
+
+Brain-hosted **single** repo. Hub UI is story × game type, not inner `projects/`.
+
+- Play must work via `file://` after clone. No PHP, no local server, no `fetch()` of `.json` packs.
+- Story packs are JSON-shaped `.js` files, one per story, loaded on demand with a script tag.
+- Neutral clue: `{ clue, response, hint, category, difficulty }`.
+- v1: Jeopardy engine + Job pack + migrate David and Goliath. Keep `david-and-goliath.html` until that is proven.
+- Teacher-host + projector. Do not add buzzers or an authoring form unless asked.
+- Contract: `AGENTS.md` and `D:\Dev\knowledge\wiki\scripture-games.md`.

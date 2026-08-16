@@ -1,0 +1,43 @@
+(function (g) {
+  g.ScriptureGames = g.ScriptureGames || {};
+  g.ScriptureGames.packs = g.ScriptureGames.packs || {};
+  g.ScriptureGames.packs["david-goliath"] = {
+    id: "david-goliath",
+    title: "David and Goliath",
+    scripture: "1 Samuel 16–17",
+    summary: "A shepherd boy trusts the Lord and faces a giant.",
+    categories: ["The Shepherd Boy", "The Giant", "The Battle", "People & Places", "Faith & Courage"],
+    difficulties: [100, 200, 300, 400, 500],
+    clues: [
+      { category: "The Shepherd Boy", difficulty: 100, hint: "1 Samuel 17:15, 34", clue: "David tended these animals for his father Jesse before facing Goliath.", response: "What are sheep?" },
+      { category: "The Shepherd Boy", difficulty: 200, hint: "1 Samuel 16:10-13", clue: "The prophet who anointed David as the future king of Israel.", response: "Who is Samuel?" },
+      { category: "The Shepherd Boy", difficulty: 300, hint: "1 Samuel 17:17-18", clue: "David's father sent him to the battlefield to bring food to these three family members.", response: "Who are his brothers?" },
+      { category: "The Shepherd Boy", difficulty: 400, hint: "1 Samuel 17:34-36", clue: "Before facing Goliath, David told Saul he had killed both of these predators while protecting his flock.", response: "What are a lion and a bear?" },
+      { category: "The Shepherd Boy", difficulty: 500, hint: "1 Samuel 17:12-14", clue: "David was the youngest of this many sons of Jesse, from the town of Bethlehem.", response: "What is eight?" },
+
+      { category: "The Giant", difficulty: 100, hint: "1 Samuel 17:4", clue: "The army Goliath fought for.", response: "Who are the Philistines?" },
+      { category: "The Giant", difficulty: 200, hint: "1 Samuel 17:4-7", clue: "The metal Goliath's helmet was made of.", response: "What is bronze (brass)?" },
+      { category: "The Giant", difficulty: 300, hint: "1 Samuel 17:4", clue: "Goliath's height was six cubits and a span — taller than this many feet.", response: "What is nine feet?" },
+      { category: "The Giant", difficulty: 400, hint: "1 Samuel 17:16", clue: "The number of days Goliath came out and challenged Israel, morning and evening.", response: "What is forty?" },
+      { category: "The Giant", difficulty: 500, hint: "1 Samuel 17:7", clue: "The man who walked in front of Goliath carrying his shield.", response: "Who is his shield-bearer?" },
+
+      { category: "The Battle", difficulty: 100, hint: "1 Samuel 17:40", clue: "David carried his stones in this kind of bag.", response: "What is a shepherd's bag?" },
+      { category: "The Battle", difficulty: 200, hint: "1 Samuel 17:49-50", clue: "The weapon David used to hit Goliath.", response: "What is a sling?" },
+      { category: "The Battle", difficulty: 300, hint: "1 Samuel 17:49", clue: "The place on Goliath's body where the stone hit him.", response: "What is his forehead?" },
+      { category: "The Battle", difficulty: 400, hint: "1 Samuel 17:49", clue: "What happened to Goliath after the stone hit him.", response: "What is he fell face-down on the ground?" },
+      { category: "The Battle", difficulty: 500, hint: "1 Samuel 17:38-39", clue: "King Saul offered David this to wear before the battle, but David took it off.", response: "What is Saul's armor?" },
+
+      { category: "People & Places", difficulty: 100, hint: "1 Samuel 17:31-33", clue: "The king of Israel during this story.", response: "Who is Saul?" },
+      { category: "People & Places", difficulty: 200, hint: "1 Samuel 17:13-14", clue: "The number of David's brothers who were soldiers in the battle.", response: "What is three?" },
+      { category: "People & Places", difficulty: 300, hint: "1 Samuel 17:17-18", clue: "David's father sent him to bring bread and cheese to his brothers and this person.", response: "Who is the captain (commander)?" },
+      { category: "People & Places", difficulty: 400, hint: "1 Samuel 17:2", clue: "The valley where the Israelite and Philistine armies camped on opposite sides.", response: "What is the Valley of Elah?" },
+      { category: "People & Places", difficulty: 500, hint: "1 Samuel 17:4", clue: "The city Goliath came from.", response: "What is Gath?" },
+
+      { category: "Faith & Courage", difficulty: 100, hint: "1 Samuel 17:45", clue: "David said he came to fight Goliath in the name of the Lord of _____.", response: "What is hosts?" },
+      { category: "Faith & Courage", difficulty: 200, hint: "1 Samuel 17:37", clue: "David told Saul that the Lord who saved him from the lion and bear would save him from this.", response: "Who is Goliath (the Philistine)?" },
+      { category: "Faith & Courage", difficulty: 300, hint: "1 Samuel 17:47", clue: "David said, \"The battle is the _____'s.\"", response: "What is the Lord's?" },
+      { category: "Faith & Courage", difficulty: 400, hint: "1 Samuel 17:47", clue: "David said the Lord does NOT save with these two weapons.", response: "What are sword and spear?" },
+      { category: "Faith & Courage", difficulty: 500, hint: "1 Samuel 17:46-47", clue: "David said all the people would know that the Lord doesn't need weapons to save because this belongs to Him.", response: "What is the battle?" }
+    ]
+  };
+})(window);

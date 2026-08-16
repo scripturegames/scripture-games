@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scripture Games</title>
+  <link rel="stylesheet" href="hub.css">
+</head>
+<body>
+  <main id="hub" class="hub">
+    <header class="hub-header">
+      <h1>Scripture Games</h1>
+      <p>Pick a story, pick a game, play on the projector. No install, no internet.</p>
+    </header>
+
+    <section class="hub-section" aria-labelledby="stories-heading">
+      <h2 id="stories-heading">Story</h2>
+      <div id="story-cards" class="cards"></div>
+    </section>
+
+    <section class="hub-section" aria-labelledby="games-heading">
+      <h2 id="games-heading">Game</h2>
+      <div id="game-cards" class="cards"></div>
+    </section>
+
+    <div class="play-row">
+      <button type="button" class="play-btn" id="play-btn">Play</button>
+    </div>
+    <p class="hub-error" id="hub-error" role="status"></p>
+
+    <p class="hub-foot">Teacher-host + projector. Open this file from disk (<code>index.html</code>). Legacy board: <a href="david-and-goliath.html">David and Goliath</a>.</p>
+  </main>
+
+  <div id="game-root" hidden></div>
+
+  <noscript>This hub needs JavaScript. Open <a href="david-and-goliath.html">david-and-goliath.html</a> for the legacy board.</noscript>
+
+  <script src="stories/catalog.js"></script>
+  <script src="hub.js"></script>
+</body>
+</html>

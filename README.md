@@ -1,38 +1,31 @@
-# David and Goliath Jeopardy
+# scripture-games
 
-A Jeopardy-style scripture game for Primary children (ages 9-11), based on **1 Samuel 16-17**.
+Local **games hub** for church activities: pick a scripture story, pick a game type, play on a projector. No install, no server, no internet.
 
-Designed as an open-book activity where kids search their scriptures to find the answers.
+v1 is a Jeopardy-style board (teacher-host). Trivia and other types come later, using the same story clue banks.
 
-## Categories
+## Play
 
-| Category | Focus |
-|----------|-------|
-| **The Shepherd Boy** | Facts about David |
-| **The Giant** | Facts about Goliath |
-| **The Battle** | Events of the fight |
-| **People & Places** | Who and where |
-| **Faith & Courage** | What the story teaches (David's own words from scripture) |
+1. Open `index.html` in a browser (double-click is fine).
+2. Pick a story (**Job** or **David and Goliath**) and **Jeopardy**.
+3. Choose teams → **Start**.
+4. Click a tile. Kids search their scriptures. **Show Hint** for the reference. **Spacebar** reveals the response.
 
-## How to Play
+The legacy board still works: `david-and-goliath.html`.
 
-1. Open `david-and-goliath.html` in any web browser
-2. Select the number of teams and click **Start**
-3. Click a point tile to reveal the clue
-4. Kids search their scriptures (1 Samuel 17) for the answer
-5. Click **Show Hint** to reveal the scripture reference if they need help
-6. Press **Spacebar** to reveal the correct response
-7. Use the **+/-** buttons to award points to teams
+## Repo layout
 
-## Keyboard Shortcuts
+```
+index.html              Hub (story × game)
+stories/                One .js pack per story
+games/jeopardy/         Jeopardy engine
+david-and-goliath.html  Legacy board (kept until the hub is proven in class)
+```
 
-| Key | Action |
-|-----|--------|
-| `Spacebar` | Reveal the correct response |
-| `ESC` | Close the current clue |
-| `Arrow keys` | Navigate the board |
-| `1-9` | Select a team, then `Up/Down` arrows to add/subtract points |
+Packs are JSON-shaped JavaScript so they load from `file://`. Do not add a server.
 
-## Requirements
+## Related
 
-None — it's a single HTML file. No server, no install, no internet needed. Just open it in a browser.
+- Project contract: `AGENTS.md`
+- Brain wiki: `D:\Dev\knowledge\wiki\scripture-games.md`
+- GitHub: [cyberresearch-us/scripture-games](https://github.com/cyberresearch-us/scripture-games)
