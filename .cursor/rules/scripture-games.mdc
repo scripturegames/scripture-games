@@ -11,6 +11,6 @@ Brain-hosted **single** repo. Hub UI is story × game type, not inner `projects/
 - Story packs are JSON-shaped `.js` files, one per story, loaded on demand with a script tag.
 - Jeopardy clue: `{ clue, response, hint, category, difficulty }`.
 - Pictionary prompt: `{ draw, ref }`. Engine lives in `games/pictionary/`.
-- Games: Jeopardy (Job, David and Goliath) and Pictionary (CFM Psalms pack `psalms-cfm-2026-36`). Keep `david-and-goliath.html` until Jeopardy is proven in class.
+- Games: Jeopardy and Pictionary. v1 packs (Job, David and Goliath, Psalms CFM) include **both** `clues` and `drawPrompts`. Keep `david-and-goliath.html` until Jeopardy is proven in class.
 - Teacher-host + projector. Do not add buzzers, an authoring form, or a Come Follow Me calendar unless asked.
 - Contract: `AGENTS.md` and `D:\Dev\knowledge\wiki\scripture-games.md`.

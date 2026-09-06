@@ -2,9 +2,9 @@
 
 ## Play
 
-Open `index.html` in a browser. No server. Pick a story, pick a game.
+Open `index.html` in a browser (or the Pages URL in `README.md`). Pick any story, pick either game.
 
-### Jeopardy (Job, David and Goliath)
+### Jeopardy (all three stories)
 
 | Key | Action |
 |-----|--------|
@@ -12,7 +12,7 @@ Open `index.html` in a browser. No server. Pick a story, pick a game.
 | ESC | Close the current clue (or open Menu from the board) |
 | 1–9 then Up/Down | Select team, change score |
 
-### Pictionary (Psalms: Praise the Lord)
+### Pictionary (all three stories)
 
 | Key / button | Action |
 |-----|--------|

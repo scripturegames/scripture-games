@@ -7,21 +7,21 @@
       title: "Job",
       file: "stories/job.js",
       scripture: "Job 1–3; 12–14; 19; 21–24; 38–40; 42",
-      summary: "Job stays faithful through hard trials and testifies that his Redeemer lives."
+      summary: "Job stays faithful through hard trials. Jeopardy and Pictionary."
     },
     {
       id: "david-goliath",
       title: "David and Goliath",
       file: "stories/david-goliath.js",
       scripture: "1 Samuel 16–17",
-      summary: "A shepherd boy trusts the Lord and faces a giant."
+      summary: "A shepherd boy trusts the Lord and faces a giant. Jeopardy and Pictionary."
     },
     {
       id: "psalms-cfm-2026-36",
       title: "Psalms: Praise the Lord",
       file: "stories/psalms-cfm-2026-36.js",
       scripture: "Psalms 102–103; 110; 116–119; 127–128; 135–139; 146–150",
-      summary: "Come Follow Me Aug 31–Sep 6 2026. Fifty simple things to draw from this week's psalms."
+      summary: "Come Follow Me Aug 31–Sep 6 2026. Jeopardy and Pictionary from this week's psalms."
     }
   ];
 

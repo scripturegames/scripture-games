@@ -5,7 +5,40 @@
     id: "psalms-cfm-2026-36",
     title: "Psalms: Praise the Lord",
     scripture: "Psalms 102–103; 110; 116–119; 127–128; 135–139; 146–150",
-    summary: "Come Follow Me, Aug 31–Sep 6 2026. Simple things to draw from this week's psalms.",
+    summary: "Come Follow Me, Aug 31–Sep 6 2026. Praise, comfort, and the path home — Jeopardy and Pictionary.",
+    categories: ["Praise the Lord", "Comfort in Trials", "Jesus Christ", "The Path", "He Knows Me"],
+    difficulties: [100, 200, 300, 400, 500],
+    clues: [
+      { category: "Praise the Lord", difficulty: 100, hint: "Psalm 150:6", clue: "The last psalm says let every thing that hath this praise the Lord.", response: "What is breath?" },
+      { category: "Praise the Lord", difficulty: 200, hint: "Psalm 150:3", clue: "Psalm 150 says to praise Him with the sound of this instrument.", response: "What is a trumpet (or the trumpet)?" },
+      { category: "Praise the Lord", difficulty: 300, hint: "Psalm 148:3", clue: "Psalm 148 invites the sun, moon, and these lights to praise the Lord.", response: "What are stars?" },
+      { category: "Praise the Lord", difficulty: 400, hint: "Psalm 146–150", clue: "Hallelujah means \"praise\" this holy name.", response: "What is Jehovah (the Lord)?" },
+      { category: "Praise the Lord", difficulty: 500, hint: "Psalm 150:4–5", clue: "Besides harp and trumpet, Psalm 150 names these crashing instruments.", response: "What are cymbals?" },
+
+      { category: "Comfort in Trials", difficulty: 100, hint: "Psalm 103:8", clue: "Psalm 103 says the Lord is merciful and this.", response: "What is gracious?" },
+      { category: "Comfort in Trials", difficulty: 200, hint: "Psalm 103:3", clue: "The psalm says He forgives iniquity and heals all our this.", response: "What are diseases?" },
+      { category: "Comfort in Trials", difficulty: 300, hint: "Psalm 103:5", clue: "He renews your youth like this bird.", response: "What is the eagle?" },
+      { category: "Comfort in Trials", difficulty: 400, hint: "Psalm 102:7", clue: "The psalmist felt as lonely as a sparrow alone upon the this.", response: "What is the housetop (roof)?" },
+      { category: "Comfort in Trials", difficulty: 500, hint: "Psalm 116:13", clue: "The psalmist said he would take the cup of this, and call upon the name of the Lord.", response: "What is salvation?" },
+
+      { category: "Jesus Christ", difficulty: 100, hint: "Psalm 118:22", clue: "The stone which the builders refused became the head stone of the this.", response: "What is the corner?" },
+      { category: "Jesus Christ", difficulty: 200, hint: "Psalm 118:26", clue: "This psalm says, \"Blessed be he that cometh in the name of the _____.\"", response: "What is the Lord?" },
+      { category: "Jesus Christ", difficulty: 300, hint: "Psalm 110:1", clue: "The Lord said unto my Lord, Sit thou at my right this.", response: "What is hand?" },
+      { category: "Jesus Christ", difficulty: 400, hint: "Psalm 110:1", clue: "Until I make thine enemies thy this.", response: "What is footstool?" },
+      { category: "Jesus Christ", difficulty: 500, hint: "Psalm 110:4", clue: "Thou art a priest for ever after the order of this.", response: "Who is Melchizedek?" },
+
+      { category: "The Path", difficulty: 100, hint: "Psalm 119:105", clue: "Thy word is a lamp unto my this.", response: "What are feet?" },
+      { category: "The Path", difficulty: 200, hint: "Psalm 119:105", clue: "And a light unto my this.", response: "What is path?" },
+      { category: "The Path", difficulty: 300, hint: "Psalm 119:11", clue: "Thy word have I hid in mine this, that I might not sin against thee.", response: "What is heart?" },
+      { category: "The Path", difficulty: 400, hint: "Psalm 119:176", clue: "I have gone astray like a lost this.", response: "What is sheep?" },
+      { category: "The Path", difficulty: 500, hint: "Psalm 119:9", clue: "Wherewithal shall a young man cleanse his this? By taking heed thereto according to thy word.", response: "What is way?" },
+
+      { category: "He Knows Me", difficulty: 100, hint: "Psalm 127:3", clue: "Children are an heritage of the this.", response: "What is Lord?" },
+      { category: "He Knows Me", difficulty: 200, hint: "Psalm 139:1", clue: "O Lord, thou hast searched me, and this me.", response: "What is known?" },
+      { category: "He Knows Me", difficulty: 300, hint: "Psalm 139:13", clue: "Thou hast covered me in my mother's this.", response: "What is womb?" },
+      { category: "He Knows Me", difficulty: 400, hint: "Psalm 135:16", clue: "Idols have eyes, but they do not this.", response: "What is see?" },
+      { category: "He Knows Me", difficulty: 500, hint: "Psalm 139:23", clue: "Search me, O God, and know my this.", response: "What is heart?" }
+    ],
     drawPrompts: [
       { draw: "a lamp", ref: "Psalm 119:105" },
       { draw: "a path", ref: "Psalm 119:105" },

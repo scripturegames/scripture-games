@@ -181,7 +181,7 @@
         gameRoot.hidden = false;
         if (game.id === "jeopardy") {
           if (!pack.clues || !pack.clues.length) {
-            throw new Error("This story has no Jeopardy clues. Pick Job or David and Goliath.");
+            throw new Error("This story has no Jeopardy clues yet.");
           }
           if (!g.ScriptureGames.jeopardy) {
             throw new Error("Jeopardy engine did not load.");
@@ -190,7 +190,7 @@
           return;
         }
         if (!pack.drawPrompts || !pack.drawPrompts.length) {
-          throw new Error("This story has no drawing prompts. Pick Psalms: Praise the Lord.");
+          throw new Error("This story has no drawing prompts yet.");
         }
         if (!g.ScriptureGames.pictionary) {
           throw new Error("Pictionary engine did not load.");

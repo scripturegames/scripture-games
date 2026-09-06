@@ -43,13 +43,12 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 ## v1
 
 - Hub + Jeopardy + Pictionary
-- Jeopardy packs: **Job** + **David and Goliath** (`clues`)
-- Pictionary pack: **Psalms: Praise the Lord** (`drawPrompts`) — CFM 2026 Aug 31–Sep 6, not a week-key calendar
+- Each v1 story pack has **both** `clues` and `drawPrompts`: **Job**, **David and Goliath**, **Psalms: Praise the Lord** (CFM 2026 Aug 31–Sep 6)
 - Later hub filter (not built): Bible / OT / NT / Book of Mormon / Come Follow Me this week — see brain wiki
-- Authoring: operator requests packs from the agent; no in-hub form yet
+- New packs: both games unless asked otherwise
 
 ## Quick start
 
 1. Open **this folder** as its own Cursor window (`D:\Dev\scripture-games`), not the whole brain.
-2. Play: open `index.html` from disk, or the GitHub Pages URL in `README.md`. Jeopardy: Job or David and Goliath. Pictionary: Psalms: Praise the Lord.
+2. Play: open `index.html` from disk, or the GitHub Pages URL in `README.md`. Any of the three stories × Jeopardy or Pictionary.
 3. Read `README.md`, this file, and `D:\Dev\knowledge\wiki\scripture-games.md`.
