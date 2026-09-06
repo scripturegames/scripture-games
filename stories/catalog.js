@@ -15,6 +15,13 @@
       file: "stories/david-goliath.js",
       scripture: "1 Samuel 16–17",
       summary: "A shepherd boy trusts the Lord and faces a giant."
+    },
+    {
+      id: "psalms-cfm-2026-36",
+      title: "Psalms: Praise the Lord",
+      file: "stories/psalms-cfm-2026-36.js",
+      scripture: "Psalms 102–103; 110; 116–119; 127–128; 135–139; 146–150",
+      summary: "Come Follow Me Aug 31–Sep 6 2026. Fifty simple things to draw from this week's psalms."
     }
   ];
 
@@ -25,6 +32,13 @@
       css: "games/jeopardy/jeopardy.css",
       js: "games/jeopardy/jeopardy.js",
       summary: "5×5 board, teams, scripture hint, Spacebar reveal."
+    },
+    {
+      id: "pictionary",
+      title: "Pictionary",
+      css: "games/pictionary/pictionary.css",
+      js: "games/pictionary/pictionary.js",
+      summary: "One button, next drawing prompt. Cover the word so guessers watch the board."
     }
   ];
 })(window);

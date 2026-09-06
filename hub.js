@@ -141,6 +141,9 @@
     if (g.ScriptureGames.jeopardy) {
       g.ScriptureGames.jeopardy.unmount();
     }
+    if (g.ScriptureGames.pictionary) {
+      g.ScriptureGames.pictionary.unmount();
+    }
     gameRoot.hidden = true;
     hub.hidden = false;
     showError("");
@@ -164,7 +167,7 @@
 
     loadScript(story.file)
       .then(function () {
-        if (game.id !== "jeopardy") {
+        if (game.id !== "jeopardy" && game.id !== "pictionary") {
           throw new Error("That game is not in this version yet.");
         }
         return Promise.all([loadStylesheet(game.css), loadScript(game.js)]);
@@ -174,14 +177,33 @@
         if (!pack) {
           throw new Error("Story pack did not load: " + story.id);
         }
-        if (!g.ScriptureGames.jeopardy) {
-          throw new Error("Jeopardy engine did not load.");
-        }
         hub.hidden = true;
         gameRoot.hidden = false;
-        g.ScriptureGames.jeopardy.mount(gameRoot, pack, { onExit: backToHub });
+        if (game.id === "jeopardy") {
+          if (!pack.clues || !pack.clues.length) {
+            throw new Error("This story has no Jeopardy clues. Pick Job or David and Goliath.");
+          }
+          if (!g.ScriptureGames.jeopardy) {
+            throw new Error("Jeopardy engine did not load.");
+          }
+          g.ScriptureGames.jeopardy.mount(gameRoot, pack, { onExit: backToHub });
+          return;
+        }
+        if (!pack.drawPrompts || !pack.drawPrompts.length) {
+          throw new Error("This story has no drawing prompts. Pick Psalms: Praise the Lord.");
+        }
+        if (!g.ScriptureGames.pictionary) {
+          throw new Error("Pictionary engine did not load.");
+        }
+        g.ScriptureGames.pictionary.mount(gameRoot, pack, { onExit: backToHub });
       })
       .catch(function (err) {
+        if (g.ScriptureGames.jeopardy) {
+          g.ScriptureGames.jeopardy.unmount();
+        }
+        if (g.ScriptureGames.pictionary) {
+          g.ScriptureGames.pictionary.unmount();
+        }
         showError(err.message || "Could not start the game.");
         hub.hidden = false;
         gameRoot.hidden = true;

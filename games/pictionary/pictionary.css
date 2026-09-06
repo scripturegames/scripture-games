@@ -1,0 +1,121 @@
+.sg-pictionary {
+  --navy: #1a237e;
+  --navy-mid: #24308a;
+  --gold: #ffff5f;
+  --cream: #f7f1e3;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--navy);
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.sg-pictionary * {
+  box-sizing: border-box;
+}
+
+.sg-pic-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
+  background: #0d1448;
+}
+
+.sg-pic-bar h1 {
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+}
+
+.sg-pic-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.sg-pic-count {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.sg-pic-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.sg-pic-word {
+  margin: 0;
+  font-size: clamp(2.4rem, 9vw, 6.5rem);
+  line-height: 1.1;
+  color: var(--gold);
+  text-transform: lowercase;
+  max-width: 16ch;
+}
+
+.sg-pic-word.covered {
+  color: #fff;
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-transform: none;
+}
+
+.sg-pic-ref {
+  margin: 1.1rem 0 0;
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
+  opacity: 0.9;
+}
+
+.sg-pic-hint {
+  margin: 0.85rem 0 0;
+  max-width: 36rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+.sg-pic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0 1rem 1.25rem;
+}
+
+.sg-pic-actions button {
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+}
+
+.sg-pic-next {
+  background: var(--gold);
+  color: #1a1a1a;
+}
+
+.sg-pic-cover {
+  background: #fff;
+  color: var(--navy);
+}
+
+.sg-pic-exit {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.55) !important;
+}

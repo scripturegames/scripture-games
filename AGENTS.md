@@ -2,13 +2,13 @@
 
 Brain-hosted **single** repo. In-app games hub (story catalog × game types), not a brain hub with inner `projects/`.
 
-Remote: `github.com/cyberresearch-us/scripture-games` — public. Play is clone-and-open (`file://`); no server.
+GitHub user: `scripturegames` (church profile). Target remote: `scripturegames/scripture-games` (public), SSH `git@github.com-scripturegames:scripturegames/scripture-games.git`. **Today** origin is still `cyberresearch-us/scripture-games` until transfer executes. Play is clone-and-open (`file://`) or GitHub Pages (no server to run yourself).
 
 Contract (brain wiki): `D:\Dev\knowledge\wiki\scripture-games.md`
 
 ## Purpose
 
-Teacher-hosted projector games for church activities, starting with Primary. Pick a scripture story, pick a game type, render in place. v1 game type is Jeopardy. Shared clue banks feed later types (trivia, etc.).
+Teacher-hosted projector games for church activities, starting with Primary. Pick a scripture story, pick a game type, render in place. Game types: Jeopardy (clue banks) and Pictionary (drawing prompts). Trivia later may reuse Jeopardy clues.
 
 ## Path class
 
@@ -17,13 +17,13 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 | Class | brain-hosted |
 | Shape | single |
 | Registry | `D:\Dev\repo-list.conf` |
-| GitHub | public (`cyberresearch-us/scripture-games`) |
+| GitHub | public (`scripturegames/scripture-games`; transfer pending from `cyberresearch-us`) |
 
 ## Working constraints
 
-**Allowed:** static HTML/CSS/JS; one `.js` pack per story, loaded on demand via `<script>`; small original Jeopardy engine; teacher-host + projector UX (5×5, teams, hint, Spacebar reveal, scores).
+**Allowed:** static HTML/CSS/JS; one `.js` pack per story, loaded on demand via `<script>`; Jeopardy engine; Pictionary engine; teacher-host + projector UX.
 
-**Forbidden:** PHP or any local server to make packs load; `fetch()` of `.json` as the `file://` path; writing generated HTML to disk as the play path; inner `projects/jeopardy`; secrets; GitHub Pages / custom domain as the required way to play (clone-and-open is enough). Custom hostname later needs a zone in `cloudflare-infra` before go-live.
+**Forbidden:** PHP or any local server to make packs load; `fetch()` of `.json` as the `file://` path; writing generated HTML to disk as the play path; inner `projects/jeopardy`; secrets; custom domain / Cloudflare unless Luke reopens that. Do not mint the SSH key or click Transfer until asked. New church repos go to `scripturegames`, not `cyberresearch-us`.
 
 **Do not delete** `david-and-goliath.html` until Job + engine + migrated pack are proven.
 
@@ -34,6 +34,7 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 | `index.html` | Hub: pick story, pick game, render |
 | `stories/` | One `.js` pack per story (JSON-shaped) |
 | `games/jeopardy/` | Jeopardy engine |
+| `games/pictionary/` | Pictionary engine (Next / Cover) |
 | `david-and-goliath.html` | Legacy board; source for first migrated pack |
 | `knowledge/` | Project wiki / research / docs |
 | `plans/` | Build slices |
@@ -41,13 +42,14 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 
 ## v1
 
-- Hub + Jeopardy engine
-- Packs: **Job** (this week) + migrate **David and Goliath**
-- Neutral clue: `{ clue, response, hint, category, difficulty }`
+- Hub + Jeopardy + Pictionary
+- Jeopardy packs: **Job** + **David and Goliath** (`clues`)
+- Pictionary pack: **Psalms: Praise the Lord** (`drawPrompts`) — CFM 2026 Aug 31–Sep 6, not a week-key calendar
+- Later hub filter (not built): Bible / OT / NT / Book of Mormon / Come Follow Me this week — see brain wiki
 - Authoring: operator requests packs from the agent; no in-hub form yet
 
 ## Quick start
 
 1. Open **this folder** as its own Cursor window (`D:\Dev\scripture-games`), not the whole brain.
-2. Play: open `index.html` in a browser. Pick Job (or David and Goliath) and Jeopardy.
+2. Play: open `index.html` from disk, or the GitHub Pages URL in `README.md`. Jeopardy: Job or David and Goliath. Pictionary: Psalms: Praise the Lord.
 3. Read `README.md`, this file, and `D:\Dev\knowledge\wiki\scripture-games.md`.
