@@ -2,7 +2,7 @@
 
 Local **games hub** for church activities: pick a scripture story, pick a game type, play on a projector. No install, no server to run yourself.
 
-**Jeopardy** and **Pictionary** both work on **Job**, **David and Goliath**, and **Psalms: Praise the Lord** (this week's Come Follow Me). Trivia and other types come later.
+**Jeopardy** and **Pictionary** both work on **Job**, **David and Goliath**, **Psalms: Praise the Lord**, and **Proverbs: He Shall Direct Thy Paths** (Come Follow Me Sep 7–13 2026). Trivia and other types come later.
 
 ## Play
 
@@ -10,7 +10,7 @@ Local **games hub** for church activities: pick a scripture story, pick a game t
 
 **From disk:** open `index.html` (double-click is fine).
 
-1. Pick any of the three stories, then **Jeopardy** or **Pictionary**.
+1. Pick any story, then **Jeopardy** or **Pictionary**.
 2. **Jeopardy:** choose teams → **Start**. Click a tile. **Show Hint** for the reference. **Spacebar** reveals the response.
 3. **Pictionary:** **Next** (or Spacebar) rotates ~50 simple draws. **Cover word** so guessers watch the board, not the projector.
 

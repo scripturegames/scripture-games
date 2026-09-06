@@ -4,7 +4,7 @@
 
 Open `index.html` in a browser (or the Pages URL in `README.md`). Pick any story, pick either game.
 
-### Jeopardy (all three stories)
+### Jeopardy (every story)
 
 | Key | Action |
 |-----|--------|
@@ -12,7 +12,7 @@ Open `index.html` in a browser (or the Pages URL in `README.md`). Pick any story
 | ESC | Close the current clue (or open Menu from the board) |
 | 1–9 then Up/Down | Select team, change score |
 
-### Pictionary (all three stories)
+### Pictionary (every story)
 
 | Key / button | Action |
 |-----|--------|

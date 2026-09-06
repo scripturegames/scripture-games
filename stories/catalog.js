@@ -3,6 +3,13 @@
 
   g.ScriptureGames.catalog = [
     {
+      id: "proverbs-cfm-2026-37",
+      title: "Proverbs: He Shall Direct Thy Paths",
+      file: "stories/proverbs-cfm-2026-37.js",
+      scripture: "Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12",
+      summary: "Come Follow Me Sep 7–13 2026. Jeopardy and Pictionary from this week's Proverbs and Ecclesiastes."
+    },
+    {
       id: "job",
       title: "Job",
       file: "stories/job.js",
