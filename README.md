@@ -6,7 +6,7 @@ Local **games hub** for church activities: pick a scripture story, pick a game t
 
 ## Play
 
-**Hosted:** [https://cyberresearch-us.github.io/scripture-games/](https://cyberresearch-us.github.io/scripture-games/) (GitHub Pages on `cyberresearch-us`; that profile keeps this repo).
+**Hosted:** [https://scripturegames.github.io/scripture-games/](https://scripturegames.github.io/scripture-games/)
 
 **From disk:** open `index.html` (double-click is fine).
 
@@ -32,4 +32,4 @@ Packs are JSON-shaped JavaScript so they load from `file://`. Do not add a serve
 
 - Project contract: `AGENTS.md`
 - Brain wiki: `D:\Dev\knowledge\wiki\scripture-games.md`
-- GitHub career: [cyberresearch-us/scripture-games](https://github.com/cyberresearch-us/scripture-games) (keep). Church copy: [scripturegames/scripture-games](https://github.com/scripturegames/scripture-games). Do not Transfer.
+- GitHub: [scripturegames/scripture-games](https://github.com/scripturegames/scripture-games). Career copy on `cyberresearch-us` was removed 2026-09-06.

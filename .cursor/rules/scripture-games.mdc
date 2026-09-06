@@ -14,5 +14,5 @@ Brain-hosted **single** repo. Hub UI is story × game type, not inner `projects/
 - Games: Jeopardy and Pictionary. v1 packs (Job, David and Goliath, Psalms CFM) include **both** `clues` and `drawPrompts`. Keep `david-and-goliath.html` until Jeopardy is proven in class.
 - Teacher-host + projector. Do not add buzzers, an authoring form, or a Come Follow Me calendar unless asked.
 - Later hub (not now): categories OT / NT / BoM / D&C / CFM-by-date, not a flat story list.
-- Do not GitHub-Transfer off `cyberresearch-us`. Church copy on `scripturegames` is a second remote, not a move.
+- Canonical GitHub is `scripturegames/scripture-games`. Do not recreate it under `cyberresearch-us`.
 - Contract: `AGENTS.md` and `D:\Dev\knowledge\wiki\scripture-games.md`.
