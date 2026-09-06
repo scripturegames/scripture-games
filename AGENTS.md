@@ -2,7 +2,7 @@
 
 Brain-hosted **single** repo. In-app games hub (story catalog × game types), not a brain hub with inner `projects/`.
 
-GitHub user: `scripturegames` (church profile). Target remote: `scripturegames/scripture-games` (public), SSH `git@github.com-scripturegames:scripturegames/scripture-games.git`. **Today** origin is still `cyberresearch-us/scripture-games` until transfer executes. Play is clone-and-open (`file://`) or GitHub Pages (no server to run yourself).
+GitHub user: `scripturegames` (church profile). **Today** `origin` is `cyberresearch-us/scripture-games` (keep it). Church copy on `scripturegames/scripture-games` is allowed when that remote exists; do not Transfer. Play is clone-and-open (`file://`) or GitHub Pages.
 
 Contract (brain wiki): `D:\Dev\knowledge\wiki\scripture-games.md`
 
@@ -17,13 +17,13 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 | Class | brain-hosted |
 | Shape | single |
 | Registry | `D:\Dev\repo-list.conf` |
-| GitHub | public (`scripturegames/scripture-games`; transfer pending from `cyberresearch-us`) |
+| GitHub | public (`cyberresearch-us/scripture-games`; church copy on `scripturegames` later, no transfer) |
 
 ## Working constraints
 
 **Allowed:** static HTML/CSS/JS; one `.js` pack per story, loaded on demand via `<script>`; Jeopardy engine; Pictionary engine; teacher-host + projector UX.
 
-**Forbidden:** PHP or any local server to make packs load; `fetch()` of `.json` as the `file://` path; writing generated HTML to disk as the play path; inner `projects/jeopardy`; secrets; custom domain / Cloudflare unless Luke reopens that. Do not mint the SSH key or click Transfer until asked. New church repos go to `scripturegames`, not `cyberresearch-us`.
+**Forbidden:** PHP or any local server to make packs load; `fetch()` of `.json` as the `file://` path; writing generated HTML to disk as the play path; inner `projects/jeopardy`; secrets; custom domain / Cloudflare unless Luke reopens that. Do not GitHub-Transfer this repo. Do not delete `cyberresearch-us/scripture-games`. New church repos go to `scripturegames`, not `cyberresearch-us`.
 
 **Do not delete** `david-and-goliath.html` until Job + engine + migrated pack are proven.
 
@@ -44,7 +44,7 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 
 - Hub + Jeopardy + Pictionary
 - Each v1 story pack has **both** `clues` and `drawPrompts`: **Job**, **David and Goliath**, **Psalms: Praise the Lord** (CFM 2026 Aug 31–Sep 6)
-- Later hub filter (not built): Bible / OT / NT / Book of Mormon / Come Follow Me this week — see brain wiki
+- Later hub (not built): Old Testament / New Testament / Book of Mormon / Doctrine and Covenants / Come Follow Me (date-range children). See brain wiki.
 - New packs: both games unless asked otherwise
 
 ## Quick start
