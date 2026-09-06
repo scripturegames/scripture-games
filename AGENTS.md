@@ -2,7 +2,7 @@
 
 Brain-hosted **single** repo. In-app games hub (story catalog × game types), not a brain hub with inner `projects/`.
 
-GitHub user: `scripturegames` (church profile). **Today** `origin` is `cyberresearch-us/scripture-games` (keep it). Church copy on `scripturegames/scripture-games` is allowed when that remote exists; do not Transfer. Play is clone-and-open (`file://`) or GitHub Pages.
+GitHub user: `scripturegames` (church profile). **Today** `origin` is `cyberresearch-us/scripture-games` (keep it). Church copy: `scripturegames/scripture-games` (remote `scripturegames`). Do not Transfer. Play is clone-and-open (`file://`) or GitHub Pages.
 
 Contract (brain wiki): `D:\Dev\knowledge\wiki\scripture-games.md`
 
@@ -17,7 +17,7 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 | Class | brain-hosted |
 | Shape | single |
 | Registry | `D:\Dev\repo-list.conf` |
-| GitHub | public (`cyberresearch-us/scripture-games`; church copy on `scripturegames` later, no transfer) |
+| GitHub | public career `cyberresearch-us/scripture-games`; church copy `scripturegames/scripture-games` (no transfer) |
 
 ## Working constraints
 

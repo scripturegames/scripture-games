@@ -32,4 +32,4 @@ Packs are JSON-shaped JavaScript so they load from `file://`. Do not add a serve
 
 - Project contract: `AGENTS.md`
 - Brain wiki: `D:\Dev\knowledge\wiki\scripture-games.md`
-- GitHub today: [cyberresearch-us/scripture-games](https://github.com/cyberresearch-us/scripture-games) (keep). Church copy on `scripturegames` is deferred until that account can authenticate. Do not Transfer.
+- GitHub career: [cyberresearch-us/scripture-games](https://github.com/cyberresearch-us/scripture-games) (keep). Church copy: [scripturegames/scripture-games](https://github.com/scripturegames/scripture-games). Do not Transfer.
