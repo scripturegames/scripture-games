@@ -144,6 +144,19 @@
   max-width: 36rem;
 }
 
+.sg-chase-timer {
+  margin: 1rem 0 0;
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+.sg-chase-timer.urgent {
+  color: #ffb4b4;
+}
+
 .sg-chase-text {
   margin: 1.1rem 0 0;
   max-width: 44rem;

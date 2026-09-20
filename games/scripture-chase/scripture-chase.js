@@ -3,11 +3,16 @@
 
   g.ScriptureGames = g.ScriptureGames || {};
 
+  var HUNT_SECONDS = 15;
   var root = null;
   var pack = null;
   var opts = {};
   var keyHandler = null;
   var state = null;
+  var audio = {
+    ctx: null,
+    nodes: []
+  };
 
   function escapeHtml(text) {
     return String(text == null ? "" : text)
@@ -71,6 +76,103 @@
     return n;
   }
 
+  function ensureAudio() {
+    var AC = g.AudioContext || g.webkitAudioContext;
+    if (!AC) {
+      return null;
+    }
+    if (!audio.ctx) {
+      audio.ctx = new AC();
+    }
+    if (audio.ctx.state === "suspended" && audio.ctx.resume) {
+      audio.ctx.resume();
+    }
+    return audio.ctx;
+  }
+
+  function beep(ctx, when, freq, dur, gain) {
+    var osc = ctx.createOscillator();
+    var amp = ctx.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(freq, when);
+    amp.gain.setValueAtTime(0.0001, when);
+    amp.gain.exponentialRampToValueAtTime(gain, when + 0.02);
+    amp.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+    osc.connect(amp);
+    amp.connect(ctx.destination);
+    osc.start(when);
+    osc.stop(when + dur + 0.03);
+    audio.nodes.push(osc);
+  }
+
+  function stopMusic() {
+    var i;
+    var ctx = audio.ctx;
+    var now = ctx ? ctx.currentTime : 0;
+    for (i = 0; i < audio.nodes.length; i++) {
+      try {
+        audio.nodes[i].stop(now);
+      } catch (err) {
+        /* already stopped */
+      }
+    }
+    audio.nodes = [];
+  }
+
+  function startMusic() {
+    var ctx = ensureAudio();
+    var now;
+    var i;
+    var pattern;
+    if (!ctx) {
+      return;
+    }
+    stopMusic();
+    now = ctx.currentTime + 0.02;
+    pattern = [261.63, 329.63, 392, 329.63];
+    for (i = 0; i < HUNT_SECONDS * 2; i++) {
+      beep(ctx, now + i * 0.5, pattern[i % 4], 0.22, 0.05);
+    }
+    for (i = 1; i <= HUNT_SECONDS; i++) {
+      beep(ctx, now + i, i >= HUNT_SECONDS - 4 ? 880 : 659.25, 0.09, i >= HUNT_SECONDS - 4 ? 0.09 : 0.06);
+    }
+    beep(ctx, now + HUNT_SECONDS, 523.25, 0.35, 0.12);
+    beep(ctx, now + HUNT_SECONDS + 0.2, 392, 0.45, 0.12);
+  }
+
+  function stopHuntTimer() {
+    if (state && state.timerId) {
+      clearInterval(state.timerId);
+      state.timerId = null;
+    }
+    stopMusic();
+  }
+
+  function startHuntTimer() {
+    stopHuntTimer();
+    if (!state) {
+      return;
+    }
+    state.timerLeft = HUNT_SECONDS;
+    startMusic();
+    state.timerId = setInterval(function () {
+      if (!state) {
+        return;
+      }
+      state.timerLeft -= 1;
+      if (state.timerLeft <= 0) {
+        state.timerLeft = 0;
+        if (state.timerId) {
+          clearInterval(state.timerId);
+          state.timerId = null;
+        }
+      }
+      if (state.view === "chase" && !state.revealed) {
+        render();
+      }
+    }, 1000);
+  }
+
   function openVerse(index) {
     if (!pack.chaseVerses[index]) {
       return;
@@ -79,6 +181,7 @@
     state.view = "chase";
     state.revealed = false;
     state.done[index] = true;
+    startHuntTimer();
     render();
   }
 
@@ -130,6 +233,7 @@
       return;
     }
     if (state.view === "discuss") {
+      stopHuntTimer();
       state.view = "chase";
       state.revealed = true;
       render();
@@ -137,10 +241,12 @@
     }
     if (state.view === "chase" && state.revealed) {
       state.revealed = false;
+      startHuntTimer();
       render();
       return;
     }
     if (state.view === "chase") {
+      stopHuntTimer();
       state.view = "board";
       state.current = null;
       state.revealed = false;
@@ -153,6 +259,7 @@
   }
 
   function goBoard() {
+    stopHuntTimer();
     state.view = "board";
     state.current = null;
     state.revealed = false;
@@ -191,10 +298,18 @@
     if (!verse) {
       return renderBoard();
     }
+    var left = state.timerLeft;
+    var urgent = left != null && left <= 5;
     var body = (
       '<p class="sg-chase-ref">' + escapeHtml(verse.ref) + "</p>" +
       '<p class="sg-chase-hint">Find it in your scriptures. First one to get there reads it.</p>'
     );
+    if (!state.revealed && left != null) {
+      body +=
+        '<p class="sg-chase-timer' + (urgent ? " urgent" : "") + '">' +
+          (left > 0 ? left : "Time") +
+        "</p>";
+    }
     if (state.revealed) {
       body += '<p class="sg-chase-text">' + escapeHtml(verse.text).replace(/\n/g, "<br>") + "</p>";
     }
@@ -268,10 +383,12 @@
     } else if (action === "random") {
       pickRandom();
     } else if (action === "reveal") {
+      stopHuntTimer();
       state.revealed = true;
       render();
     } else if (action === "discuss") {
       if (state.revealed) {
+        stopHuntTimer();
         state.view = "discuss";
         render();
       }
@@ -301,8 +418,10 @@
       pickRandom();
     } else if (state.view === "chase") {
       if (!state.revealed) {
+        stopHuntTimer();
         state.revealed = true;
       } else {
+        stopHuntTimer();
         state.view = "discuss";
       }
       render();
@@ -325,7 +444,9 @@
       view: "board",
       current: null,
       revealed: false,
-      done: {}
+      done: {},
+      timerLeft: null,
+      timerId: null
     };
     root.addEventListener("click", onClick);
     keyHandler = onKey;
@@ -334,6 +455,7 @@
   }
 
   function unmount() {
+    stopHuntTimer();
     if (root) {
       root.removeEventListener("click", onClick);
       root.classList.remove("sg-chase");

@@ -24,7 +24,7 @@ Open `index.html` in a browser (or the Pages URL in `README.md`). Pick a story, 
 
 | Key / button | Action |
 |-----|--------|
-| Click a tile or Random / Spacebar | Show the reference; kids race to find it |
+| Click a tile or Random / Spacebar | Show the reference, start a 15-second hunt timer and ticks |
 | Reveal verse or Spacebar | Show the verse text |
 | Discuss or Spacebar after reveal | Section heading, summary, and that verse’s questions |
 | Back (bottom left) or ESC | Previous step: discuss → verse → reference → board → hub |
