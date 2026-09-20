@@ -12,9 +12,10 @@ Teacher-hosted projector games for church (starting with Primary): pick a script
 ```text
 index.html (hub)
   ├─ stories/catalog.js     story list × game types
-  ├─ stories/<slug>.js      clues + drawPrompts (one pack per story)
+  ├─ stories/<slug>.js      clues + drawPrompts and/or chaseVerses
   ├─ games/jeopardy/        5×5 board, hint, Spacebar reveal
-  └─ games/pictionary/      Next / Cover word
+  ├─ games/pictionary/      Next / Cover word
+  └─ games/scripture-chase/ Hidden tiles, reveal verse, discuss
 Play: file://  or  https://scripturegames.github.io/scripture-games/
 ```
 
@@ -25,10 +26,12 @@ Play: file://  or  https://scripturegames.github.io/scripture-games/
 | Hub `index.html` (story × game, render in place) | live |
 | Jeopardy engine `games/jeopardy/` | live |
 | Pictionary engine `games/pictionary/` | live |
+| Scripture Chase engine `games/scripture-chase/` | live |
 | Pack Job | live |
 | Pack David and Goliath | live |
 | Pack Psalms CFM Aug 31–Sep 6 2026 | live |
 | Pack Proverbs CFM Sep 7–13 2026 | live |
+| Pack Isaiah CFM Sep 14–20 2026 (chase-only) | live |
 | GitHub Pages (`master` `/`, `.nojekyll`) | live |
 | Legacy `david-and-goliath.html` | live (keep until hub is proven in class) |
 | Book-category hub (OT / NT / BoM / D&C / CFM-by-date) | not-built |

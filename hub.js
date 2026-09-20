@@ -98,26 +98,62 @@
     return null;
   }
 
+  function storyGames(story, games) {
+    var allowed;
+    var i;
+    var out = [];
+    if (!story || !story.games || !story.games.length) {
+      return games.slice();
+    }
+    allowed = {};
+    for (i = 0; i < story.games.length; i++) {
+      allowed[story.games[i]] = true;
+    }
+    for (i = 0; i < games.length; i++) {
+      if (allowed[games[i].id]) {
+        out.push(games[i]);
+      }
+    }
+    return out.length ? out : games.slice();
+  }
+
+  function storyAllowsGame(story, gameId) {
+    var i;
+    if (!story || !story.games || !story.games.length) {
+      return true;
+    }
+    for (i = 0; i < story.games.length; i++) {
+      if (story.games[i] === gameId) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   function renderCards() {
     var catalog = (g.ScriptureGames && g.ScriptureGames.catalog) || [];
     var games = (g.ScriptureGames && g.ScriptureGames.gameTypes) || [];
     var html = [];
     var i;
+    var story;
+    var available;
 
     if (!selectedStoryId && catalog[0]) {
       selectedStoryId = catalog[0].id;
     }
-    if (!selectedGameId && games[0]) {
-      selectedGameId = games[0].id;
+    story = findById(catalog, selectedStoryId);
+    available = storyGames(story, games);
+    if (!selectedGameId || !storyAllowsGame(story, selectedGameId)) {
+      selectedGameId = available[0] ? available[0].id : null;
     }
 
     for (i = 0; i < catalog.length; i++) {
-      var story = catalog[i];
+      var cardStory = catalog[i];
       html.push(
-        '<button type="button" class="card' + (story.id === selectedStoryId ? " selected" : "") + '" data-story="' + escapeHtml(story.id) + '">' +
-          "<h3>" + escapeHtml(story.title) + "</h3>" +
-          '<p class="meta">' + escapeHtml(story.scripture || "") + "</p>" +
-          '<p class="blurb">' + escapeHtml(story.summary || "") + "</p>" +
+        '<button type="button" class="card' + (cardStory.id === selectedStoryId ? " selected" : "") + '" data-story="' + escapeHtml(cardStory.id) + '">' +
+          "<h3>" + escapeHtml(cardStory.title) + "</h3>" +
+          '<p class="meta">' + escapeHtml(cardStory.scripture || "") + "</p>" +
+          '<p class="blurb">' + escapeHtml(cardStory.summary || "") + "</p>" +
         "</button>"
       );
     }
@@ -126,8 +162,9 @@
     html = [];
     for (i = 0; i < games.length; i++) {
       var game = games[i];
+      var allowed = storyAllowsGame(story, game.id);
       html.push(
-        '<button type="button" class="card' + (game.id === selectedGameId ? " selected" : "") + '" data-game="' + escapeHtml(game.id) + '">' +
+        '<button type="button" class="card' + (game.id === selectedGameId ? " selected" : "") + (allowed ? "" : " disabled") + '" data-game="' + escapeHtml(game.id) + '"' + (allowed ? "" : " disabled") + ">" +
           "<h3>" + escapeHtml(game.title) + "</h3>" +
           '<p class="blurb">' + escapeHtml(game.summary || "") + "</p>" +
         "</button>"
@@ -137,13 +174,20 @@
     playBtn.disabled = !(selectedStoryId && selectedGameId);
   }
 
-  function backToHub() {
+  function unmountGames() {
     if (g.ScriptureGames.jeopardy) {
       g.ScriptureGames.jeopardy.unmount();
     }
     if (g.ScriptureGames.pictionary) {
       g.ScriptureGames.pictionary.unmount();
     }
+    if (g.ScriptureGames.scriptureChase) {
+      g.ScriptureGames.scriptureChase.unmount();
+    }
+  }
+
+  function backToHub() {
+    unmountGames();
     gameRoot.hidden = true;
     hub.hidden = false;
     showError("");
@@ -167,7 +211,7 @@
 
     loadScript(story.file)
       .then(function () {
-        if (game.id !== "jeopardy" && game.id !== "pictionary") {
+        if (game.id !== "jeopardy" && game.id !== "pictionary" && game.id !== "scripture-chase") {
           throw new Error("That game is not in this version yet.");
         }
         return Promise.all([loadStylesheet(game.css), loadScript(game.js)]);
@@ -189,21 +233,26 @@
           g.ScriptureGames.jeopardy.mount(gameRoot, pack, { onExit: backToHub });
           return;
         }
-        if (!pack.drawPrompts || !pack.drawPrompts.length) {
-          throw new Error("This story has no drawing prompts yet.");
+        if (game.id === "pictionary") {
+          if (!pack.drawPrompts || !pack.drawPrompts.length) {
+            throw new Error("This story has no drawing prompts yet.");
+          }
+          if (!g.ScriptureGames.pictionary) {
+            throw new Error("Pictionary engine did not load.");
+          }
+          g.ScriptureGames.pictionary.mount(gameRoot, pack, { onExit: backToHub });
+          return;
         }
-        if (!g.ScriptureGames.pictionary) {
-          throw new Error("Pictionary engine did not load.");
+        if (!pack.chaseVerses || !pack.chaseVerses.length) {
+          throw new Error("This story has no chase verses yet.");
         }
-        g.ScriptureGames.pictionary.mount(gameRoot, pack, { onExit: backToHub });
+        if (!g.ScriptureGames.scriptureChase) {
+          throw new Error("Scripture Chase engine did not load.");
+        }
+        g.ScriptureGames.scriptureChase.mount(gameRoot, pack, { onExit: backToHub });
       })
       .catch(function (err) {
-        if (g.ScriptureGames.jeopardy) {
-          g.ScriptureGames.jeopardy.unmount();
-        }
-        if (g.ScriptureGames.pictionary) {
-          g.ScriptureGames.pictionary.unmount();
-        }
+        unmountGames();
         showError(err.message || "Could not start the game.");
         hub.hidden = false;
         gameRoot.hidden = true;

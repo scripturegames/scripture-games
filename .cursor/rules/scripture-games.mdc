@@ -11,7 +11,8 @@ Brain-hosted **single** repo. Hub UI is story × game type, not inner `projects/
 - Story packs are JSON-shaped `.js` files, one per story, loaded on demand with a script tag.
 - Jeopardy clue: `{ clue, response, hint, category, difficulty }`.
 - Pictionary prompt: `{ draw, ref }`. Engine lives in `games/pictionary/`.
-- Games: Jeopardy and Pictionary. v1 packs (Job, David and Goliath, Psalms CFM) and requested CFM weeks (Proverbs Sep 7–13 2026) include **both** `clues` and `drawPrompts`. Keep `david-and-goliath.html` until Jeopardy is proven in class.
+- Scripture Chase verse: `{ ref, section, text, summary, questions }`. Engine lives in `games/scripture-chase/`.
+- Games: Jeopardy, Pictionary, and Scripture Chase. v1 packs (Job, David and Goliath, Psalms CFM) and requested CFM weeks (Proverbs Sep 7–13 2026) include **both** `clues` and `drawPrompts`. Isaiah CFM Sep 14–20 2026 is **chase-only**. Keep `david-and-goliath.html` until Jeopardy is proven in class.
 - Teacher-host + projector. Do not add buzzers, an authoring form, or a Come Follow Me calendar unless asked.
 - Later hub (not now): categories OT / NT / BoM / D&C / CFM-by-date, not a flat story list.
 - Canonical GitHub is `scripturegames/scripture-games`. Do not recreate it under `cyberresearch-us`.
