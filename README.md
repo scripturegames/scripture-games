@@ -24,6 +24,8 @@ stories/                One .js pack per story
 games/jeopardy/         Jeopardy engine
 games/pictionary/       Pictionary engine
 david-and-goliath.html  Legacy board (kept until the hub is proven in class)
+docs/                   What exists / what wakes what
+ISSUES.md               Backlog
 ```
 
 Packs are JSON-shaped JavaScript so they load from `file://`. Do not add a server.
@@ -31,5 +33,6 @@ Packs are JSON-shaped JavaScript so they load from `file://`. Do not add a serve
 ## Related
 
 - Project contract: `AGENTS.md`
+- Architecture: `docs/ARCHITECTURE.md`
 - Brain wiki: `D:\Dev\knowledge\wiki\scripture-games.md`
 - GitHub: [scripturegames/scripture-games](https://github.com/scripturegames/scripture-games). Career copy on `cyberresearch-us` was removed 2026-09-06.

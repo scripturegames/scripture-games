@@ -38,3 +38,5 @@ Ask the agent for a pack. It writes `stories/<slug>.js` and registers it in `sto
 ## Open this repo
 
 Cursor: **File → Open Folder** → `D:\Dev\scripture-games` (its own window, not `D:\Dev`).
+
+Architecture: `docs/ARCHITECTURE.md`. Backlog: `ISSUES.md`.

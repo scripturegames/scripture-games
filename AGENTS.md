@@ -36,6 +36,8 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 | `games/jeopardy/` | Jeopardy engine |
 | `games/pictionary/` | Pictionary engine (Next / Cover) |
 | `david-and-goliath.html` | Legacy board; source for first migrated pack |
+| `docs/` | Product pack: what exists / what wakes what |
+| `ISSUES.md` | Backlog (Open / Closed) |
 | `knowledge/` | Project wiki / research / docs |
 | `plans/` | Build slices |
 | `sessions/` | Dated notes (kickoff files live on the brain: `D:\Dev\sessions/`) |
