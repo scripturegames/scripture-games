@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Jesus calms the sea">
+  <rect width="160" height="160" rx="12" fill="#7eb8d4"/>
+  <path d="M0 110 Q40 92 80 110 T160 110 V160 H0 Z" fill="#1a237e"/>
+  <path d="M48 108 L80 78 L112 108" fill="#6b4f3a"/>
+  <rect x="62" y="86" width="36" height="18" fill="#c9a227"/>
+  <circle cx="80" cy="64" r="10" fill="#f7f1e3"/>
+  <path d="M80 74 v16" stroke="#f7f1e3" stroke-width="5"/>
+</svg>

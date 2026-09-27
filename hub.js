@@ -184,6 +184,9 @@
     if (g.ScriptureGames.scriptureChase) {
       g.ScriptureGames.scriptureChase.unmount();
     }
+    if (g.ScriptureGames.matching) {
+      g.ScriptureGames.matching.unmount();
+    }
   }
 
   function backToHub() {
@@ -211,7 +214,7 @@
 
     loadScript(story.file)
       .then(function () {
-        if (game.id !== "jeopardy" && game.id !== "pictionary" && game.id !== "scripture-chase") {
+        if (game.id !== "jeopardy" && game.id !== "pictionary" && game.id !== "scripture-chase" && game.id !== "matching") {
           throw new Error("That game is not in this version yet.");
         }
         return Promise.all([loadStylesheet(game.css), loadScript(game.js)]);
@@ -243,13 +246,23 @@
           g.ScriptureGames.pictionary.mount(gameRoot, pack, { onExit: backToHub });
           return;
         }
-        if (!pack.chaseVerses || !pack.chaseVerses.length) {
-          throw new Error("This story has no chase verses yet.");
+        if (game.id === "scripture-chase") {
+          if (!pack.chaseVerses || !pack.chaseVerses.length) {
+            throw new Error("This story has no chase verses yet.");
+          }
+          if (!g.ScriptureGames.scriptureChase) {
+            throw new Error("Scripture Chase engine did not load.");
+          }
+          g.ScriptureGames.scriptureChase.mount(gameRoot, pack, { onExit: backToHub });
+          return;
         }
-        if (!g.ScriptureGames.scriptureChase) {
-          throw new Error("Scripture Chase engine did not load.");
+        if (!pack.matchItems || !pack.matchItems.length) {
+          throw new Error("This story has no matching pictures yet.");
         }
-        g.ScriptureGames.scriptureChase.mount(gameRoot, pack, { onExit: backToHub });
+        if (!g.ScriptureGames.matching) {
+          throw new Error("Matching engine did not load.");
+        }
+        g.ScriptureGames.matching.mount(gameRoot, pack, { onExit: backToHub });
       })
       .catch(function (err) {
         unmountGames();

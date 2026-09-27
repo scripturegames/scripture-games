@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Sacrament">
+  <rect width="160" height="160" rx="12" fill="#f7f1e3"/>
+  <rect x="28" y="70" width="104" height="44" rx="6" fill="#c9c3b8"/>
+  <rect x="36" y="78" width="28" height="12" fill="#fff"/>
+  <rect x="72" y="78" width="28" height="12" fill="#fff"/>
+  <rect x="108" y="78" width="16" height="12" fill="#fff"/>
+  <circle cx="50" cy="102" r="6" fill="#fff"/>
+  <circle cx="80" cy="102" r="6" fill="#fff"/>
+  <circle cx="110" cy="102" r="6" fill="#fff"/>
+</svg>

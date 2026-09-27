@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Heavy burden">
+  <rect width="160" height="160" rx="12" fill="#f7f1e3"/>
+  <path d="M52 70 h56 v50 a8 8 0 0 1 -8 8 H60 a8 8 0 0 1 -8 -8 z" fill="#3d7a4a"/>
+  <path d="M64 70 C64 44 96 44 96 70" fill="none" stroke="#6b4f3a" stroke-width="8"/>
+  <rect x="68" y="84" width="24" height="16" rx="2" fill="#f7f1e3"/>
+</svg>

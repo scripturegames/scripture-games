@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Rejoicing">
+  <rect width="160" height="160" rx="12" fill="#f7f1e3"/>
+  <circle cx="80" cy="48" r="16" fill="#e8c39a"/>
+  <path d="M80 66 v28" stroke="#1a237e" stroke-width="8"/>
+  <path d="M80 78 L48 50 M80 78 L112 50" stroke="#1a237e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 118 L80 94 L98 118" fill="none" stroke="#1a237e" stroke-width="8" stroke-linecap="round"/>
+</svg>

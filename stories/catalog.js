@@ -3,6 +3,14 @@
 
   g.ScriptureGames.catalog = [
     {
+      id: "isaiah-cfm-2026-39",
+      title: "Isaiah: A Marvellous Work and a Wonder",
+      file: "stories/isaiah-cfm-2026-39.js",
+      scripture: "Isaiah 13–14; 22; 24–30; 35",
+      summary: "Come Follow Me Sep 21–27 2026. One 6×4 matching board from this week's Teaching Children.",
+      games: ["matching"]
+    },
+    {
       id: "isaiah-cfm-2026-38",
       title: "Isaiah: God Is My Salvation",
       file: "stories/isaiah-cfm-2026-38.js",
@@ -65,6 +73,13 @@
       css: "games/scripture-chase/scripture-chase.css",
       js: "games/scripture-chase/scripture-chase.js",
       summary: "Hidden tiles, race to the verse, then read and discuss."
+    },
+    {
+      id: "matching",
+      title: "Matching",
+      css: "games/matching/matching.css",
+      js: "games/matching/matching.js",
+      summary: "Two of each picture. Match, then share why it matters."
     }
   ];
 })(window);

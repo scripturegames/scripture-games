@@ -31,13 +31,23 @@ Open `index.html` in a browser (or the Pages URL in `README.md`). Pick a story, 
 | Back to Board (bottom right) | Return to the tile board |
 | Back to Hub (board, bottom left) | Back to the hub |
 
+### Matching (Isaiah CFM Sep 21–27 2026)
+
+| Key / button | Action |
+|-----|--------|
+| Memory / Face up | Hide pictures (classic) or show all (younger Primary) |
+| Click two tiles | Match → discuss prompt. Mismatch flips back after a beat |
+| Spacebar or Keep matching | Close the discuss screen |
+| Shuffle | New mix of the same pictures |
+| ESC | Discuss → board → hub |
+
 Legacy board: `david-and-goliath.html`.
 
 ## Constraints
 
 - `file://` must work. Load story packs with `<script src="stories/….js">`, not `fetch('….json')`.
 - No PHP, no `npm start`. GitHub Pages is an allowed share path; `file://` must still work.
-- One `.js` file per story. Jeopardy clues: `{ clue, response, hint, category, difficulty }`. Pictionary prompts: `{ draw, ref }`. Scripture Chase verses: `{ ref, section, text, summary, questions }`.
+- One `.js` file per story. Jeopardy clues: `{ clue, response, hint, category, difficulty }`. Pictionary prompts: `{ draw, ref }`. Scripture Chase verses: `{ ref, section, text, summary, questions }`. Matching pictures: `{ id, section, label, image, refs, prompt, source }`. Church Media Library copies go in `stories/images/<pack-id>/` with `CREDITS.md` linking the original page.
 - Do not delete `david-and-goliath.html` until Job + engine + migrated pack work in class.
 - Do not create inner `projects/` for game types.
 - Come Follow Me packs are requested one week at a time. Do not build a week-key calendar unless asked.
@@ -45,6 +55,8 @@ Legacy board: `david-and-goliath.html`.
 ## Add a story (v1)
 
 Ask the agent for a pack. It writes `stories/<slug>.js` and registers it in `stories/catalog.js`. Operator does not hand-edit unless they want to.
+
+New CFM content and new games: take scriptures and principles from **Ideas for Teaching Children** only. Keep the hopeful parts (Christ saves, refuge, Restoration). Skip adult warning sections unless asked. Matching pictures are original SVGs in `stories/images/` — do not paste church gospel art or member printables.
 
 ## Open this repo
 

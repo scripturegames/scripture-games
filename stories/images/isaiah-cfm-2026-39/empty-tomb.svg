@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Empty tomb">
+  <rect width="160" height="160" rx="12" fill="#f7f1e3"/>
+  <circle cx="128" cy="36" r="16" fill="#f4d06a"/>
+  <path d="M12 138h136" stroke="#6b4f3a" stroke-width="8"/>
+  <path d="M28 138 V70 a42 42 0 0 1 84 0 v68" fill="#8a8680"/>
+  <ellipse cx="70" cy="100" rx="22" ry="32" fill="#1a237e"/>
+  <circle cx="118" cy="118" r="22" fill="#c9c3b8"/>
+</svg>

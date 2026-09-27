@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="A feast">
+  <rect width="160" height="160" rx="12" fill="#f7f1e3"/>
+  <ellipse cx="80" cy="108" rx="58" ry="18" fill="#6b4f3a"/>
+  <ellipse cx="80" cy="96" rx="48" ry="14" fill="#fff"/>
+  <circle cx="58" cy="92" r="8" fill="#c9a227"/>
+  <circle cx="80" cy="88" r="9" fill="#c9a227"/>
+  <circle cx="102" cy="92" r="8" fill="#c9a227"/>
+</svg>

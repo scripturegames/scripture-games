@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="House on a rock">
+  <rect width="160" height="160" rx="12" fill="#f7f1e3"/>
+  <path d="M8 138 L56 92 L150 138 Z" fill="#6b4f3a"/>
+  <path d="M70 96 L100 70 L130 96" fill="#1a237e"/>
+  <rect x="78" y="96" width="44" height="32" fill="#c9a227"/>
+  <rect x="94" y="108" width="12" height="20" fill="#1a237e"/>
+</svg>

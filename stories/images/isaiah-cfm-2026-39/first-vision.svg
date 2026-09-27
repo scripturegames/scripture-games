@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="First Vision">
+  <rect width="160" height="160" rx="12" fill="#1a237e"/>
+  <path d="M8 138 L40 70 L62 138 Z" fill="#2e5e3a"/>
+  <path d="M98 138 L128 64 L156 138 Z" fill="#3d7a4a"/>
+  <circle cx="80" cy="34" r="20" fill="#f4d06a"/>
+  <circle cx="68" cy="48" r="9" fill="#f7f1e3"/>
+  <circle cx="92" cy="48" r="9" fill="#f7f1e3"/>
+  <circle cx="80" cy="96" r="8" fill="#e8c39a"/>
+  <path d="M80 104 v18" stroke="#c9a227" stroke-width="6"/>
+  <path d="M68 124 L80 114 L92 124" fill="none" stroke="#c9a227" stroke-width="6"/>
+</svg>

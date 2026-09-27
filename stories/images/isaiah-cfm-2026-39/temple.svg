@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Temple">
+  <rect width="160" height="160" rx="12" fill="#7eb8d4"/>
+  <rect x="0" y="118" width="160" height="42" fill="#3d7a4a"/>
+  <rect x="36" y="70" width="88" height="52" fill="#f7f1e3"/>
+  <path d="M32 70 L80 36 L128 70 Z" fill="#f7f1e3"/>
+  <rect x="76" y="22" width="8" height="22" fill="#c9a227"/>
+  <circle cx="80" cy="18" r="6" fill="#c9a227"/>
+  <rect x="70" y="92" width="20" height="30" fill="#1a237e"/>
+</svg>

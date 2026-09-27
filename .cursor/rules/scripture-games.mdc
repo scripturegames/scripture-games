@@ -12,7 +12,9 @@ Brain-hosted **single** repo. Hub UI is story × game type, not inner `projects/
 - Jeopardy clue: `{ clue, response, hint, category, difficulty }`.
 - Pictionary prompt: `{ draw, ref }`. Engine lives in `games/pictionary/`.
 - Scripture Chase verse: `{ ref, section, text, summary, questions }`. Engine lives in `games/scripture-chase/`.
-- Games: Jeopardy, Pictionary, and Scripture Chase. v1 packs (Job, David and Goliath, Psalms CFM) and requested CFM weeks (Proverbs Sep 7–13 2026) include **both** `clues` and `drawPrompts`. Isaiah CFM Sep 14–20 2026 is **chase-only**. Keep `david-and-goliath.html` until Jeopardy is proven in class.
+- Matching item: `{ id, section, label, image, refs, prompt, source }`. Engine lives in `games/matching/`. Church Media Library copies are allowed in `stories/images/` if `source` and a nearby `CREDITS.md` point at the original page. Not our art. Do not copy Red Crystal or paid printables.
+- Games: Jeopardy, Pictionary, Scripture Chase, and Matching. v1 packs (Job, David and Goliath, Psalms CFM) and requested CFM weeks (Proverbs Sep 7–13 2026) include **both** `clues` and `drawPrompts`. Isaiah CFM Sep 14–20 2026 is **chase-only**. Isaiah CFM Sep 21–27 2026 is **matching-only**. Keep `david-and-goliath.html` until Jeopardy is proven in class.
+- New games and new CFM packs: **Ideas for Teaching Children** only (scriptures + those headings). Prefer hopeful Christ / refuge / Restoration content. Do not pull adult warning sections (pride, Babylon, turning away) as the main class material unless Luke asks.
 - Teacher-host + projector. Do not add buzzers, an authoring form, or a Come Follow Me calendar unless asked.
 - Later hub (not now): categories OT / NT / BoM / D&C / CFM-by-date, not a flat story list.
 - Canonical GitHub is `scripturegames/scripture-games`. Do not recreate it under `cyberresearch-us`.
