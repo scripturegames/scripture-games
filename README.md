@@ -14,20 +14,23 @@ Local **games hub** for church activities: pick a scripture story, pick a game t
 2. **Jeopardy:** choose teams → **Start**. Click a tile. **Show Hint** for the reference. **Spacebar** reveals the response.
 3. **Pictionary:** **Next** (or Spacebar) rotates ~50 simple draws. **Cover word** so guessers watch the board, not the projector.
 4. **Scripture Chase:** click a hidden tile (or **Random**, centered). Kids race to the reference. **Reveal verse**, **Discuss**. **Back** (bottom left) is the previous step. **Back to Board** is bottom right. **Back to Hub** is on the board, bottom left.
-5. **Matching:** 6×4 hidden board. Flip two tiles (or use **Face up** for younger Primary). After a match, share why the picture is marvelous. **Shuffle** to play again.
+5. **Matching:** 6×4 hidden board. Flip two tiles (or use **Face up** for younger Primary). After a match, read the verse together (the reference opens Gospel Library). **Shuffle** to play again.
 
-The legacy board still works: `david-and-goliath.html`.
+Hub footer: [How to use this site](how-to.html) · [Picture credits](credits.html). The legacy board still works: `david-and-goliath.html`.
 
 ## Repo layout
 
 ```
 index.html              Hub (story × game)
+how-to.html             How to use this site
+credits.html            Picture credits / not-our-art disclaimer
 stories/                One .js pack per story
+games/gospel-link.js    Gospel Library URLs for scripture refs
 games/jeopardy/         Jeopardy engine
 games/pictionary/       Pictionary engine
 games/scripture-chase/  Scripture Chase engine
 games/matching/         Matching engine
-stories/images/         Original SVGs for matching packs
+stories/images/         Media Library copies for matching packs (see CREDITS.md)
 david-and-goliath.html  Legacy board (kept until the hub is proven in class)
 docs/                   What exists / what wakes what
 ISSUES.md               Backlog

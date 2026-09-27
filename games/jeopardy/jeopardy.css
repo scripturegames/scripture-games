@@ -355,6 +355,11 @@
   display: block;
 }
 
+.sg-hint a,
+.sg-gospel-link {
+  color: inherit;
+}
+
 .sg-clue-body {
   flex: 1;
   display: flex;

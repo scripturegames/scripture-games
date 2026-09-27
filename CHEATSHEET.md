@@ -36,18 +36,18 @@ Open `index.html` in a browser (or the Pages URL in `README.md`). Pick a story, 
 | Key / button | Action |
 |-----|--------|
 | Memory / Face up | Hide pictures (classic) or show all (younger Primary) |
-| Click two tiles | Match → discuss prompt. Mismatch flips back after a beat |
+| Click two tiles | Match → verse text + Gospel Library link + discuss prompt. Mismatch flips back after a beat |
 | Spacebar or Keep matching | Close the discuss screen |
 | Shuffle | New mix of the same pictures |
 | ESC | Discuss → board → hub |
 
-Legacy board: `david-and-goliath.html`.
+Hub footer: `how-to.html` (play + about) and `credits.html` (picture disclaimer). Legacy board: `david-and-goliath.html`.
 
 ## Constraints
 
 - `file://` must work. Load story packs with `<script src="stories/….js">`, not `fetch('….json')`.
 - No PHP, no `npm start`. GitHub Pages is an allowed share path; `file://` must still work.
-- One `.js` file per story. Jeopardy clues: `{ clue, response, hint, category, difficulty }`. Pictionary prompts: `{ draw, ref }`. Scripture Chase verses: `{ ref, section, text, summary, questions }`. Matching pictures: `{ id, section, label, image, refs, prompt, source }`. Church Media Library copies go in `stories/images/<pack-id>/` with `CREDITS.md` linking the original page.
+- One `.js` file per story. Jeopardy clues: `{ clue, response, hint, category, difficulty }`. Pictionary prompts: `{ draw, ref }`. Scripture Chase verses: `{ ref, section, text, summary, questions }`. Matching pictures: `{ id, section, label, image, refs, verses: [{ ref, text }], prompt, source }`. Church Media Library copies go in `stories/images/<pack-id>/` with `CREDITS.md` linking the original page. Scripture refs become Gospel Library links via `games/gospel-link.js`.
 - Do not delete `david-and-goliath.html` until Job + engine + migrated pack work in class.
 - Do not create inner `projects/` for game types.
 - Come Follow Me packs are requested one week at a time. Do not build a week-key calendar unless asked.
@@ -56,7 +56,7 @@ Legacy board: `david-and-goliath.html`.
 
 Ask the agent for a pack. It writes `stories/<slug>.js` and registers it in `stories/catalog.js`. Operator does not hand-edit unless they want to.
 
-New CFM content and new games: take scriptures and principles from **Ideas for Teaching Children** only. Keep the hopeful parts (Christ saves, refuge, Restoration). Skip adult warning sections unless asked. Matching pictures are original SVGs in `stories/images/` — do not paste church gospel art or member printables.
+New CFM content and new games: take scriptures and principles from **Ideas for Teaching Children** only. Keep the hopeful parts (Christ saves, refuge, Restoration). Skip adult warning sections unless asked. Matching pictures are Church Media Library copies in `stories/images/` with credits — not our art, and not Red Crystal or paid printables.
 
 ## Open this repo
 

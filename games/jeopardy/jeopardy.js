@@ -213,7 +213,11 @@
       html.push('<div><button type="button" class="sg-hint-btn" data-act="hint">Show Hint</button></div>');
       html.push('<button type="button" data-act="reveal">Reveal Answer <kbd class="sg-kbd">Spacebar</kbd></button>');
       html.push("</div>");
-      html.push('<div class="sg-hint' + (state.hintShown ? " show" : "") + '">' + escapeHtml(clue.hint || "") + "</div>");
+      html.push('<div class="sg-hint' + (state.hintShown ? " show" : "") + '">' +
+        (g.ScriptureGames && typeof g.ScriptureGames.gospelLinkHtml === "function"
+          ? g.ScriptureGames.gospelLinkHtml(clue.hint || "")
+          : escapeHtml(clue.hint || "")) +
+        "</div>");
       html.push('<div class="sg-clue-body">');
       html.push('<div class="sg-clue-text">' + escapeHtml(clue.clue) + "</div>");
       html.push('<div class="sg-response' + (state.revealed ? " show" : "") + '">' + escapeHtml(clue.response) + "</div>");

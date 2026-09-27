@@ -32,7 +32,10 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 | Path | Role |
 |------|------|
 | `index.html` | Hub: pick story, pick game, render |
+| `how-to.html` | How to use this site |
+| `credits.html` | Picture credits / not-our-art disclaimer |
 | `stories/` | One `.js` pack per story (JSON-shaped) |
+| `games/gospel-link.js` | Gospel Library URLs for scripture refs |
 | `games/jeopardy/` | Jeopardy engine |
 | `games/pictionary/` | Pictionary engine (Next / Cover) |
 | `games/scripture-chase/` | Scripture Chase engine (hidden tiles, reveal, discuss) |
@@ -51,7 +54,7 @@ Teacher-hosted projector games for church activities, starting with Primary. Pic
 - Requested CFM **Isaiah: God Is My Salvation** (Sep 14–20 2026, lesson 38) is **chase-only** (`chaseVerses`). No Jeopardy/Pictionary on that card until asked.
 - Requested CFM **Isaiah: A Marvellous Work and a Wonder** (Sep 21–27 2026, lesson 39) is **matching-only** (`matchItems`). No Jeopardy/Pictionary/Chase on that card until asked.
 - Scripture Chase record: `{ ref, section, text, summary, questions }`. Click a hidden tile, show the reference, reveal verse text after someone finds it, then discuss that verse’s Teaching Children questions. No buzzers, scores, or activity prompts.
-- Matching record: `{ id, section, label, image, refs, prompt }`. Pictures live under `stories/images/<pack-id>/` as original SVGs. Memory (hide pictures) or Face up (younger Primary). After a match, share why it is marvelous. No buzzers or scores.
+- Matching record: `{ id, section, label, image, refs, verses: [{ ref, text }], prompt, source }`. Pictures live under `stories/images/<pack-id>/` as Church Media Library copies with `source` and a nearby `CREDITS.md`. Not our art. Memory (hide pictures) or Face up (younger Primary). After a match, show the verse text and a Gospel Library link so the class can read together. No buzzers or scores. Hub footer: `how-to.html` and `credits.html`.
 - Later hub (not built): Old Testament / New Testament / Book of Mormon / Doctrine and Covenants / Come Follow Me (date-range children). See brain wiki.
 - New packs: both Jeopardy and Pictionary unless asked otherwise. Chase verses or matching pictures only when requested.
 - **Primary source (2026-09-27):** new games and new CFM content come from the lesson’s **Ideas for Teaching Children** (scriptures, headings, matching verses). Not the adult/home sections unless Luke asks. Prefer the hopeful Christ / refuge / Restoration lines; skip pride, Babylon, and “turning away” warning blocks as the main class content.

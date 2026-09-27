@@ -69,19 +69,56 @@
     return out;
   }
 
+  function linkRef(ref) {
+    if (g.ScriptureGames && typeof g.ScriptureGames.gospelLinkHtml === "function") {
+      return g.ScriptureGames.gospelLinkHtml(ref);
+    }
+    return escapeHtml(ref);
+  }
+
+  function normalizeVerses(item) {
+    var verses;
+    var refs;
+    if (item.verses && item.verses.length) {
+      verses = item.verses.map(function (verse) {
+        return {
+          ref: String(verse.ref == null ? "" : verse.ref).trim(),
+          text: String(verse.text == null ? "" : verse.text).replace(/\r\n/g, "\n").trim()
+        };
+      }).filter(function (verse) {
+        return verse.ref.length > 0;
+      });
+    } else {
+      verses = [];
+    }
+    refs = (item.refs || []).map(function (ref) {
+      return String(ref == null ? "" : ref).trim();
+    }).filter(function (ref) {
+      return ref.length > 0;
+    });
+    if (!verses.length && refs.length) {
+      verses = refs.map(function (ref) {
+        return { ref: ref, text: "" };
+      });
+    }
+    if (!refs.length && verses.length) {
+      refs = verses.map(function (verse) {
+        return verse.ref;
+      });
+    }
+    return { refs: refs, verses: verses };
+  }
+
   function normalizePack(src) {
     var items = (src.matchItems || []).map(function (item) {
-      var refs = (item.refs || []).map(function (ref) {
-        return String(ref == null ? "" : ref).trim();
-      }).filter(function (ref) {
-        return ref.length > 0;
-      });
+      var parsed = normalizeVerses(item);
       return {
         id: String(item.id == null ? "" : item.id).trim(),
         section: String(item.section == null ? "" : item.section).trim(),
         label: String(item.label == null ? "" : item.label).trim(),
         image: String(item.image == null ? "" : item.image).trim(),
-        refs: refs,
+        refs: parsed.refs,
+        verses: parsed.verses,
         prompt: String(item.prompt == null ? "" : item.prompt).trim(),
         source: String(item.source == null ? "" : item.source).trim(),
         fit: item.fit === "contain" ? "contain" : "cover"
@@ -348,7 +385,8 @@
   function renderDiscuss() {
     var item = state.discussItem;
     var html = [];
-    var refs;
+    var i;
+    var verse;
     html.push('<header class="sg-match-bar">');
     html.push("<div><h1>A match!</h1>");
     html.push('<p class="sg-match-meta">' + escapeHtml((item && item.section) || pack.title) + "</p></div>");
@@ -356,19 +394,21 @@
     html.push("</header>");
     html.push('<div class="sg-match-discuss">');
     if (item) {
+      html.push('<div class="sg-match-discuss-body">');
       html.push('<img class="sg-match-discuss-art" src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.label) + '">');
-      html.push('<h2>' + escapeHtml(item.label) + "</h2>");
-      refs = (item.refs || []).join(" · ");
-      if (refs) {
-        html.push('<p class="sg-match-refs">' + escapeHtml(refs) + "</p>");
+      html.push('<div class="sg-match-discuss-copy">');
+      html.push("<h2>" + escapeHtml(item.label) + "</h2>");
+      for (i = 0; i < (item.verses || []).length; i++) {
+        verse = item.verses[i];
+        html.push('<p class="sg-match-refs">' + linkRef(verse.ref) + "</p>");
+        if (verse.text) {
+          html.push('<p class="sg-match-verse">' + escapeHtml(verse.text).replace(/\n/g, "<br>") + "</p>");
+        }
       }
       if (item.prompt) {
         html.push('<p class="sg-match-prompt">' + escapeHtml(item.prompt) + "</p>");
       }
-      if (isSafeSource(item.source)) {
-        html.push('<p class="sg-match-hint"><a class="sg-match-source" href="' + escapeHtml(item.source) + '" target="_blank" rel="noopener">' + escapeHtml(sourceLabel(item.source)) + "</a></p>");
-      }
-      html.push('<p class="sg-match-hint">After a match is made… share why it is marvelous to them.</p>');
+      html.push("</div></div>");
     }
     html.push("</div>");
     html.push('<div class="sg-match-actions">');

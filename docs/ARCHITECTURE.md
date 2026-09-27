@@ -11,12 +11,14 @@ Teacher-hosted projector games for church (starting with Primary): pick a script
 
 ```text
 index.html (hub)
+  ├─ how-to.html / credits.html
+  ├─ games/gospel-link.js   Gospel Library URLs for refs
   ├─ stories/catalog.js     story list × game types
   ├─ stories/<slug>.js      clues + drawPrompts and/or chaseVerses / matchItems
   ├─ games/jeopardy/        5×5 board, hint, Spacebar reveal
   ├─ games/pictionary/      Next / Cover word
   ├─ games/scripture-chase/ Hidden tiles, reveal verse, discuss
-  └─ games/matching/        Section boards, memory or face-up, discuss after match
+  └─ games/matching/        One 6×4 board, memory or face-up, verse + discuss after match
 Play: file://  or  https://scripturegames.github.io/scripture-games/
 ```
 
@@ -28,7 +30,9 @@ Play: file://  or  https://scripturegames.github.io/scripture-games/
 | Jeopardy engine `games/jeopardy/` | live |
 | Pictionary engine `games/pictionary/` | live |
 | Scripture Chase engine `games/scripture-chase/` | live |
-| Matching engine `games/matching/` | live |
+| Matching engine `games/matching/` (one 6×4 board; discuss shows verse text) | live |
+| Gospel Library links on scripture refs (`games/gospel-link.js`) | live |
+| Hub pages `how-to.html`, `credits.html` | live |
 | Pack Job | live |
 | Pack David and Goliath | live |
 | Pack Psalms CFM Aug 31–Sep 6 2026 | live |

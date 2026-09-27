@@ -93,7 +93,11 @@
     } else {
       word = prompt.draw;
       if (prompt.ref) {
-        refHtml = '<p class="sg-pic-ref">' + escapeHtml(prompt.ref) + "</p>";
+        refHtml = '<p class="sg-pic-ref">' +
+          (g.ScriptureGames && typeof g.ScriptureGames.gospelLinkHtml === "function"
+            ? g.ScriptureGames.gospelLinkHtml(prompt.ref)
+            : escapeHtml(prompt.ref)) +
+          "</p>";
       }
     }
 

@@ -78,6 +78,11 @@
   opacity: 0.9;
 }
 
+.sg-pic-ref a,
+.sg-gospel-link {
+  color: var(--gold);
+}
+
 .sg-pic-hint {
   margin: 0.85rem 0 0;
   max-width: 36rem;

@@ -22,6 +22,13 @@
       .replace(/"/g, "&quot;");
   }
 
+  function linkRef(ref) {
+    if (g.ScriptureGames && typeof g.ScriptureGames.gospelLinkHtml === "function") {
+      return g.ScriptureGames.gospelLinkHtml(ref);
+    }
+    return escapeHtml(ref);
+  }
+
   function normalizePack(src) {
     var verses = (src.chaseVerses || []).map(function (v) {
       var questions = (v.questions || []).map(function (q) {
@@ -301,7 +308,7 @@
     var left = state.timerLeft;
     var urgent = left != null && left <= 5;
     var body = (
-      '<p class="sg-chase-ref">' + escapeHtml(verse.ref) + "</p>" +
+      '<p class="sg-chase-ref">' + linkRef(verse.ref) + "</p>" +
       '<p class="sg-chase-hint">Find it in your scriptures. First one to get there reads it.</p>'
     );
     if (!state.revealed && left != null) {
@@ -339,7 +346,7 @@
     }
     return (
       '<div class="sg-chase-stage discuss">' +
-        '<p class="sg-chase-ref small">' + escapeHtml(verse.ref) + "</p>" +
+        '<p class="sg-chase-ref small">' + linkRef(verse.ref) + "</p>" +
         '<h2 class="sg-chase-section">' + escapeHtml(verse.section) + "</h2>" +
         (verse.summary ? '<p class="sg-chase-summary">' + escapeHtml(verse.summary) + "</p>" : "") +
         (items.length ? '<ol class="sg-chase-questions">' + items.join("") + "</ol>" : "") +

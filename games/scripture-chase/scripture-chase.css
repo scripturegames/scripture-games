@@ -135,6 +135,11 @@
   font-weight: 700;
 }
 
+.sg-chase-ref a,
+.sg-gospel-link {
+  color: inherit;
+}
+
 .sg-chase-ref.small {
   font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
