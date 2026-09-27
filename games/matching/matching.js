@@ -321,7 +321,6 @@
         '<button type="button" class="sg-match-tile' +
           (tile.faceUp ? " face-up" : "") +
           (tile.matched ? " matched" : "") +
-          (item && item.fit === "contain" ? " fit-contain" : "") +
           '" data-action="tile" data-index="' +
           tile.index +
           '"' +
@@ -330,9 +329,7 @@
       );
       if (tile.faceUp && item) {
         html.push('<img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.label) + '">');
-        if (item.fit !== "contain") {
-          html.push('<span class="sg-match-tile-label">' + escapeHtml(item.label) + "</span>");
-        }
+        html.push('<span class="sg-match-tile-label">' + escapeHtml(item.label) + "</span>");
       } else {
         html.push('<span class="sg-match-tile-back">?</span>');
       }
