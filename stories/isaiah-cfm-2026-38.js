@@ -6,6 +6,11 @@
     title: "Isaiah: God Is My Salvation",
     scripture: "Isaiah 1–12",
     summary: "Come Follow Me, Sep 14–20 2026. Scripture Chase from this week's Teaching Children verses.",
+    key: [
+      { title: "Because of Jesus Christ, I can repent and be clean.", refs: ["Isaiah 1:2–4", "Isaiah 1:16–18"] },
+      { title: "In the temple, I learn about Jesus Christ.", refs: ["Isaiah 2:2–4"] },
+      { title: "Jesus Christ came to earth to be my Savior.", refs: ["Isaiah 7:14", "Isaiah 9:6–7", "Matthew 1:21–23", "Luke 1:31–33"] }
+    ],
     chaseVerses: [
       {
         ref: "Isaiah 1:2–4",

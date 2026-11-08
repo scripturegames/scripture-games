@@ -6,6 +6,11 @@
     title: "Isaiah: A Marvellous Work and a Wonder",
     scripture: "Isaiah 13–14; 22; 24–30; 35",
     summary: "Come Follow Me Sep 21–27 2026. One matching board from this week's Teaching Children.",
+    key: [
+      { title: "Jesus Christ can save me from sin and death.", refs: ["Isaiah 14:3", "Isaiah 25:8–9", "Isaiah 28:16"] },
+      { title: "Jesus gives me “refuge from the storm.”", refs: ["Isaiah 25:4–6"] },
+      { title: "The Restoration of the gospel is a “marvellous work.”", refs: ["Isaiah 29:14"] }
+    ],
     matchItems: [
       {
         id: "empty-tomb",

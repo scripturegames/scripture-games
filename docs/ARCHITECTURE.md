@@ -1,6 +1,6 @@
 # Architecture — scripture-games
 
-**Last aligned:** 2026-09-27
+**Last aligned:** 2026-11-08
 **Audience:** a human who needs to know what this repo is and what is actually running.
 
 ## In one paragraph
@@ -19,6 +19,7 @@ index.html (hub)
   ├─ games/pictionary/      Next / Cover word
   ├─ games/scripture-chase/ Hidden tiles, reveal verse, discuss
   └─ games/matching/        One 6×4 board, memory or face-up, verse + discuss after match
+  └─ games/trail/           Path of squares, flip a card, 10-second timer, scripture hint
 Play: file://  or  https://scripturegames.github.io/scripture-games/
 ```
 
@@ -31,6 +32,7 @@ Play: file://  or  https://scripturegames.github.io/scripture-games/
 | Pictionary engine `games/pictionary/` | live |
 | Scripture Chase engine `games/scripture-chase/` | live |
 | Matching engine `games/matching/` (one 6×4 board; discuss shows verse text) | live |
+| Trail engine `games/trail/` (winding 20-stone path; roll 2/4/6; 10 seconds, then half move) | live |
 | Gospel Library links on scripture refs (`games/gospel-link.js`) | live |
 | Hub pages `how-to.html`, `credits.html` | live |
 | Pack Job | live |
@@ -39,6 +41,8 @@ Play: file://  or  https://scripturegames.github.io/scripture-games/
 | Pack Proverbs CFM Sep 7–13 2026 | live |
 | Pack Isaiah CFM Sep 14–20 2026 (chase-only) | live |
 | Pack Isaiah CFM Sep 21–27 2026 (matching-only) | live |
+| Pack Jeremiah CFM Oct 26–Nov 1 2026 (Jeopardy + Pictionary) | live |
+| Pack Ezekiel CFM Nov 2–8 2026 (Jeopardy, Pictionary, Trail, and Scripture Chase; Teaching Children plus the lesson intro) | live |
 | GitHub Pages (`master` `/`, `.nojekyll`) | live |
 | Legacy `david-and-goliath.html` | live (keep until hub is proven in class) |
 | Book-category hub (OT / NT / BoM / D&C / CFM-by-date) | not-built |

@@ -3,6 +3,22 @@
 
   g.ScriptureGames.catalog = [
     {
+      id: "ezekiel-cfm-2026-45",
+      title: "Ezekiel: A New Spirit Will I Put within You",
+      file: "stories/ezekiel-cfm-2026-45.js",
+      scripture: "Ezekiel 1–3; 33–34; 36–37; 47",
+      summary: "Come Follow Me Nov 2–8 2026. Jeopardy, Pictionary, Trail, and Scripture Chase from this week's Teaching Children and the lesson intro.",
+      games: ["jeopardy", "pictionary", "trail", "scripture-chase"]
+    },
+    {
+      id: "jeremiah-cfm-2026-44",
+      title: "Jeremiah: I Will Turn Their Mourning into Joy",
+      file: "stories/jeremiah-cfm-2026-44.js",
+      scripture: "Jeremiah 31–33; 36–39; Lamentations 1; 3",
+      summary: "Come Follow Me Oct 26–Nov 1 2026. Jeopardy, Pictionary, and Trail from this week's Teaching Children.",
+      games: ["jeopardy", "pictionary", "trail"]
+    },
+    {
       id: "isaiah-cfm-2026-39",
       title: "Isaiah: A Marvellous Work and a Wonder",
       file: "stories/isaiah-cfm-2026-39.js",
@@ -23,32 +39,32 @@
       title: "Proverbs: He Shall Direct Thy Paths",
       file: "stories/proverbs-cfm-2026-37.js",
       scripture: "Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12",
-      summary: "Come Follow Me Sep 7–13 2026. Jeopardy and Pictionary from this week's Proverbs and Ecclesiastes.",
-      games: ["jeopardy", "pictionary"]
+      summary: "Come Follow Me Sep 7–13 2026. Jeopardy, Pictionary, and Trail from this week's Proverbs and Ecclesiastes.",
+      games: ["jeopardy", "pictionary", "trail"]
     },
     {
       id: "job",
       title: "Job",
       file: "stories/job.js",
       scripture: "Job 1–3; 12–14; 19; 21–24; 38–40; 42",
-      summary: "Job stays faithful through hard trials. Jeopardy and Pictionary.",
-      games: ["jeopardy", "pictionary"]
+      summary: "Job stays faithful through hard trials. Jeopardy, Pictionary, and Trail.",
+      games: ["jeopardy", "pictionary", "trail"]
     },
     {
       id: "david-goliath",
       title: "David and Goliath",
       file: "stories/david-goliath.js",
       scripture: "1 Samuel 16–17",
-      summary: "A shepherd boy trusts the Lord and faces a giant. Jeopardy and Pictionary.",
-      games: ["jeopardy", "pictionary"]
+      summary: "A shepherd boy trusts the Lord and faces a giant. Jeopardy, Pictionary, and Trail.",
+      games: ["jeopardy", "pictionary", "trail"]
     },
     {
       id: "psalms-cfm-2026-36",
       title: "Psalms: Praise the Lord",
       file: "stories/psalms-cfm-2026-36.js",
       scripture: "Psalms 102–103; 110; 116–119; 127–128; 135–139; 146–150",
-      summary: "Come Follow Me Aug 31–Sep 6 2026. Jeopardy and Pictionary from this week's psalms.",
-      games: ["jeopardy", "pictionary"]
+      summary: "Come Follow Me Aug 31–Sep 6 2026. Jeopardy, Pictionary, and Trail from this week's psalms.",
+      games: ["jeopardy", "pictionary", "trail"]
     }
   ];
 
@@ -80,6 +96,13 @@
       css: "games/matching/matching.css",
       js: "games/matching/matching.js",
       summary: "Two of each picture. Match, then share why it matters."
+    },
+    {
+      id: "trail",
+      title: "Trail",
+      css: "games/trail/trail.css",
+      js: "games/trail/trail.js",
+      summary: "A winding path. Roll 2, 4, or 6. Full move before the hint, half after."
     }
   ];
 })(window);

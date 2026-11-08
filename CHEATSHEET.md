@@ -4,7 +4,7 @@
 
 Open `index.html` in a browser (or the Pages URL in `README.md`). Pick a story, pick a game.
 
-### Jeopardy (Job, David and Goliath, Psalms, Proverbs)
+### Jeopardy (Job, David and Goliath, Psalms, Proverbs, Jeremiah CFM Oct 26–Nov 1 2026, Ezekiel CFM Nov 2–8 2026)
 
 | Key | Action |
 |-----|--------|
@@ -12,7 +12,7 @@ Open `index.html` in a browser (or the Pages URL in `README.md`). Pick a story, 
 | ESC | Close the current clue (or open Menu from the board) |
 | 1–9 then Up/Down | Select team, change score |
 
-### Pictionary (Job, David and Goliath, Psalms, Proverbs)
+### Pictionary (Job, David and Goliath, Psalms, Proverbs, Jeremiah CFM Oct 26–Nov 1 2026, Ezekiel CFM Nov 2–8 2026)
 
 | Key / button | Action |
 |-----|--------|
@@ -41,13 +41,26 @@ Open `index.html` in a browser (or the Pages URL in `README.md`). Pick a story, 
 | Shuffle | New mix of the same pictures |
 | ESC | Discuss → board → hub |
 
+### Trail (same facts as Jeopardy; the card shows the question, and Answer reveals the answer)
+
+| Key / button | Action |
+|-----|--------|
+| Die on the right, or Spacebar | Roll 2, 4, or 6. Click the die again to reroll. It clears on the next team's turn |
+| Flip card or Spacebar | Show the question and start 10 seconds |
+| Answer | Reveal the answer after the team has answered |
+| They got it | Before the hint: move the full roll. After the hint: move half |
+| Time runs out | The hint card appears on its own, with Show answer. A right answer then moves half |
+| They missed it | That team stays put and the next team rolls |
+| Next team's turn or Spacebar | Pass to the next team so the die can be rolled |
+| ESC | Menu. ESC again continues |
+
 Hub footer: `how-to.html` (play + about) and `credits.html` (picture disclaimer). Legacy board: `david-and-goliath.html`.
 
 ## Constraints
 
 - `file://` must work. Load story packs with `<script src="stories/….js">`, not `fetch('….json')`.
 - No PHP, no `npm start`. GitHub Pages is an allowed share path; `file://` must still work.
-- One `.js` file per story. Jeopardy clues: `{ clue, response, hint, category, difficulty }`. Pictionary prompts: `{ draw, ref }`. Scripture Chase verses: `{ ref, section, text, summary, questions }`. Matching pictures: `{ id, section, label, image, refs, verses: [{ ref, text }], prompt, source }`. Church Media Library copies go in `stories/images/<pack-id>/` with `CREDITS.md` linking the original page. Scripture refs become Gospel Library links via `games/gospel-link.js`.
+- One `.js` file per story. Each fact: `{ question, answer, clue, response, hint, category, difficulty }`. Trail shows the question and the answer. Jeopardy shows the fill-in clue and the “What is” response. Pictionary prompts: `{ draw, ref }`. Scripture Chase verses: `{ ref, section, text, summary, questions }`. Matching pictures: `{ id, section, label, image, refs, verses: [{ ref, text }], prompt, source }`. Church Media Library copies go in `stories/images/<pack-id>/` with `CREDITS.md` linking the original page. Scripture refs become Gospel Library links via `games/gospel-link.js`.
 - Do not delete `david-and-goliath.html` until Job + engine + migrated pack work in class.
 - Do not create inner `projects/` for game types.
 - Come Follow Me packs are requested one week at a time. Do not build a week-key calendar unless asked.

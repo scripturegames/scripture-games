@@ -2,7 +2,7 @@
 
 Local **games hub** for church activities: pick a scripture story, pick a game type, play on a projector. No install, no server to run yourself.
 
-**Jeopardy** and **Pictionary** both work on **Job**, **David and Goliath**, **Psalms: Praise the Lord**, and **Proverbs: He Shall Direct Thy Paths** (Come Follow Me Sep 7–13 2026). **Scripture Chase** is on **Isaiah: God Is My Salvation** (Come Follow Me Sep 14–20 2026). **Matching** is on **Isaiah: A Marvellous Work and a Wonder** (Come Follow Me Sep 21–27 2026). Trivia and other types come later.
+**Jeopardy**, **Pictionary**, and **Trail** work on **Job**, **David and Goliath**, **Psalms: Praise the Lord**, **Proverbs: He Shall Direct Thy Paths** (Come Follow Me Sep 7–13 2026), **Jeremiah: I Will Turn Their Mourning into Joy** (Come Follow Me Oct 26–Nov 1 2026), and **Ezekiel: A New Spirit Will I Put within You** (Come Follow Me Nov 2–8 2026). **Scripture Chase** is on **Isaiah: God Is My Salvation** (Come Follow Me Sep 14–20 2026) and **Ezekiel** (Nov 2–8 2026). **Matching** is on **Isaiah: A Marvellous Work and a Wonder** (Come Follow Me Sep 21–27 2026). Trivia and other types come later.
 
 ## Play
 
@@ -15,6 +15,7 @@ Local **games hub** for church activities: pick a scripture story, pick a game t
 3. **Pictionary:** **Next** (or Spacebar) rotates ~50 simple draws. **Cover word** so guessers watch the board, not the projector.
 4. **Scripture Chase:** click a hidden tile (or **Random**, centered). Kids race to the reference. **Reveal verse**, **Discuss**. **Back** (bottom left) is the previous step. **Back to Board** is bottom right. **Back to Hub** is on the board, bottom left.
 5. **Matching:** 6×4 hidden board. Flip two tiles (or use **Face up** for younger Primary). After a match, read the verse together (the reference opens Gospel Library). **Shuffle** to play again.
+6. **Trail:** **Roll** (2, 4, or 6), then **Flip card**. That team has 10 seconds. A right answer moves the full roll. After the hint, a right answer moves half. A miss after the hint stays put and the next team rolls. First team to Finish wins. Trail asks each fact as a question. Click Answer to reveal it. Jeopardy uses the same facts as fill-in clues.
 
 Hub footer: [How to use this site](how-to.html) · [Picture credits](credits.html). The legacy board still works: `david-and-goliath.html`.
 

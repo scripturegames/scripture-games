@@ -6,3 +6,4 @@
 - Shared clue banks work for Jeopardy and trivia. Family Feud-style games need extra fields — do not over-abstract v1.
 - Come Follow Me week keys change every year; keep them out of v1 story identity.
 - Score after closing a clue needs `lastClue`; do not fall back to the first tile’s point value (JeopardyLabs did, and it false-awards 100).
+- Trail’s bottom-bar action slot must not set the width for every `.sg-trail-actions` block. That same class is the team picker and the question-card buttons.

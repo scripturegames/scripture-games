@@ -187,10 +187,26 @@
     if (g.ScriptureGames.matching) {
       g.ScriptureGames.matching.unmount();
     }
+    if (g.ScriptureGames.trail) {
+      g.ScriptureGames.trail.unmount();
+    }
+  }
+
+  function showLessonKey(pack) {
+    if (g.ScriptureGames.lessonKey) {
+      g.ScriptureGames.lessonKey.show(pack);
+    }
+  }
+
+  function hideLessonKey() {
+    if (g.ScriptureGames.lessonKey) {
+      g.ScriptureGames.lessonKey.hide();
+    }
   }
 
   function backToHub() {
     unmountGames();
+    hideLessonKey();
     gameRoot.hidden = true;
     hub.hidden = false;
     showError("");
@@ -214,7 +230,7 @@
 
     loadScript(story.file)
       .then(function () {
-        if (game.id !== "jeopardy" && game.id !== "pictionary" && game.id !== "scripture-chase" && game.id !== "matching") {
+        if (game.id !== "jeopardy" && game.id !== "pictionary" && game.id !== "scripture-chase" && game.id !== "matching" && game.id !== "trail") {
           throw new Error("That game is not in this version yet.");
         }
         return Promise.all([loadStylesheet(game.css), loadScript(game.js)]);
@@ -234,6 +250,7 @@
             throw new Error("Jeopardy engine did not load.");
           }
           g.ScriptureGames.jeopardy.mount(gameRoot, pack, { onExit: backToHub });
+          showLessonKey(pack);
           return;
         }
         if (game.id === "pictionary") {
@@ -244,6 +261,7 @@
             throw new Error("Pictionary engine did not load.");
           }
           g.ScriptureGames.pictionary.mount(gameRoot, pack, { onExit: backToHub });
+          showLessonKey(pack);
           return;
         }
         if (game.id === "scripture-chase") {
@@ -254,6 +272,18 @@
             throw new Error("Scripture Chase engine did not load.");
           }
           g.ScriptureGames.scriptureChase.mount(gameRoot, pack, { onExit: backToHub });
+          showLessonKey(pack);
+          return;
+        }
+        if (game.id === "trail") {
+          if (!pack.clues || !pack.clues.length) {
+            throw new Error("This story has no Trail questions yet.");
+          }
+          if (!g.ScriptureGames.trail) {
+            throw new Error("Trail engine did not load.");
+          }
+          g.ScriptureGames.trail.mount(gameRoot, pack, { onExit: backToHub });
+          showLessonKey(pack);
           return;
         }
         if (!pack.matchItems || !pack.matchItems.length) {
@@ -263,9 +293,11 @@
           throw new Error("Matching engine did not load.");
         }
         g.ScriptureGames.matching.mount(gameRoot, pack, { onExit: backToHub });
+        showLessonKey(pack);
       })
       .catch(function (err) {
         unmountGames();
+        hideLessonKey();
         showError(err.message || "Could not start the game.");
         hub.hidden = false;
         gameRoot.hidden = true;

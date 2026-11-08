@@ -371,9 +371,10 @@
       clearSaved();
       startGame(true);
     } else if (act === "exit") {
+      var exit = opts.onExit;
       unmount();
-      if (opts.onExit) {
-        opts.onExit();
+      if (exit) {
+        exit();
       }
     } else if (act === "menu") {
       syncTeamsFromDom();

@@ -36,14 +36,13 @@ Research for **mechanics** only. Scriptures and principles still come from **Ide
 
 ## Mechanics that keep showing up (for our hub)
 
-Already built: Jeopardy, Pictionary, Scripture Chase.
+Already built: Jeopardy, Pictionary, Scripture Chase, Matching, Trail (path board, 2026-11-01).
 
 Repeated across these sites, not yet in the hub:
 
 - **Matching / memory** (Teaching Children this week already asks for it)
 - **Spot It / Seek It** (same pictures, find the pair)
 - **Bingo** (cover symbols as verses are read)
-- **Path / Candy Land board** (spaces = principles; journey home / follow Jesus / refuge)
 - **Scavenger / hide-the-scripture**
 - **Four corners** / stand-by-the-picture
 - **I Spy** on lesson pictures

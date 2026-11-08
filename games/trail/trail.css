@@ -1,0 +1,518 @@
+/* Path board. Projector-first. Backdrop is a Church Media Library photo. */
+
+.sg-trail {
+  --navy: #0d1448;
+  --gold: #ffe082;
+  --cream: #f7f1e3;
+  --ink: #1b1b1b;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: var(--lesson-key-h, 0px);
+  display: flex;
+  flex-direction: column;
+  background: #0d1448 url("images/temple-mount.jpg") center / cover no-repeat;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.sg-trail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 14, 40, 0.42);
+  pointer-events: none;
+}
+
+.sg-trail * {
+  box-sizing: border-box;
+}
+
+.sg-trail > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sg-trail button,
+.sg-trail select {
+  font-family: inherit;
+}
+
+.sg-trail-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  padding: 0.65rem 1rem 0.35rem;
+}
+
+.sg-trail-top h1 {
+  margin: 0;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+}
+
+.sg-trail-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.92rem;
+}
+
+.sg-trail-credit {
+  margin: 0;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.sg-trail-credit a {
+  color: #fff;
+}
+
+.sg-trail-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  padding: 0 1rem 0.2rem;
+  font-size: 0.78rem;
+}
+
+.sg-trail-legend i {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.28rem;
+  border-radius: 3px;
+  vertical-align: -1px;
+}
+
+.sg-trail-board {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  margin: 0.15rem 0.8rem 0.2rem;
+}
+
+.sg-trail-road {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.sg-trail-road-wide,
+.sg-trail-road-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.sg-trail-road-wide {
+  stroke: rgba(255, 236, 190, 0.72);
+  stroke-width: 18px;
+}
+
+.sg-trail-road-line {
+  stroke: rgba(90, 58, 18, 0.55);
+  stroke-width: 2px;
+  stroke-dasharray: 1 9;
+}
+
+.sg-trail-stone {
+  position: absolute;
+  width: clamp(2.5rem, 7.2vmin, 4.2rem);
+  height: clamp(2.5rem, 7.2vmin, 4.2rem);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  border: 3px solid #fff8e1;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.28), 0 8px 14px rgba(0, 0, 0, 0.28);
+  z-index: 1;
+}
+
+.sg-trail-stone.start,
+.sg-trail-stone.finish {
+  width: clamp(3rem, 8.4vmin, 4.8rem);
+  height: clamp(3rem, 8.4vmin, 4.8rem);
+  background: rgba(255, 248, 225, 0.96);
+  color: var(--ink);
+}
+
+.sg-trail-stone.here {
+  z-index: 3;
+  box-shadow: 0 0 0 4px var(--gold), 0 5px 0 rgba(0, 0, 0, 0.28);
+}
+
+.sg-trail-stone.aim {
+  z-index: 2;
+  outline: 3px dashed var(--gold);
+  outline-offset: 4px;
+}
+
+.sg-trail-sq-label {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: clamp(0.72rem, 1.5vw, 1.05rem);
+  line-height: 1;
+}
+
+.sg-trail-stone.start .sg-trail-sq-label,
+.sg-trail-stone.finish .sg-trail-sq-label {
+  font-size: clamp(0.62rem, 1.2vw, 0.85rem);
+}
+
+.sg-trail-tokens {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: -0.15rem;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.1rem;
+  justify-content: center;
+}
+
+.sg-trail-token {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.sg-trail-token.on {
+  box-shadow: 0 0 0 3px var(--gold);
+}
+
+.sg-trail-bar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  flex: 0 0 4.6rem;
+  height: 4.6rem;
+  padding: 0.35rem 1rem 0.4rem 0.7rem;
+}
+
+.sg-trail-status {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.25;
+}
+
+.sg-trail-bar .sg-trail-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 8.8rem;
+  min-height: 2.9rem;
+}
+
+.sg-trail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sg-trail button.sg-go,
+.sg-trail button.sg-ghost,
+.sg-trail button.sg-team-btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.7rem 1.1rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.sg-trail button.sg-go {
+  background: #ffe082;
+  color: #1b1b1b;
+  font-weight: 700;
+}
+
+.sg-trail button.sg-ghost {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.sg-trail button.sg-team-btn {
+  color: #fff;
+  font-weight: 700;
+}
+
+.sg-trail-menu-btn {
+  position: static;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0.35rem 0.2rem;
+}
+
+.sg-trail-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(6, 10, 28, 0.45);
+}
+
+.sg-trail-card-still {
+  animation: none;
+}
+
+.lesson-key .sg-trail-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 1rem;
+  width: 100%;
+  color: var(--navy);
+}
+
+.lesson-key .sg-trail-head-title {
+  flex: 1 1 16rem;
+}
+
+.lesson-key .sg-trail-head h1 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+
+.lesson-key .sg-trail-meta,
+.lesson-key .sg-trail-status,
+.lesson-key .sg-trail-credit {
+  margin: 0;
+  color: var(--ink);
+}
+
+.lesson-key .sg-trail-legend {
+  padding: 0;
+}
+
+.lesson-key .sg-trail-status {
+  flex: 1 1 14rem;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+.lesson-key .sg-trail-credit {
+  flex: 1 1 100%;
+  font-size: 0.75rem;
+}
+
+.lesson-key .sg-trail-credit a,
+.lesson-key .sg-trail-menu-btn {
+  color: var(--navy);
+}
+
+.lesson-key .sg-trail-menu-btn {
+  border: 2px solid var(--navy);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.75rem;
+}
+
+.lesson-key .sg-trail-head button.sg-go {
+  background: #ffe082;
+  color: #1b1b1b;
+  font-weight: 700;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.lesson-key .sg-trail-die {
+  position: static;
+  transform: none;
+  flex: 0 0 auto;
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 0.8rem;
+  background: #fffef8;
+  color: #1b1b1b;
+  border: 3px solid #1b1b1b;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.lesson-key .sg-trail-die.face {
+  font-size: 2.2rem;
+}
+
+button.sg-trail-die {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sg-trail-die.waiting {
+  font-size: 1.35rem;
+}
+
+.sg-trail-die.face {
+  font-size: 3rem;
+}
+
+.sg-trail-card,
+.sg-trail-panel {
+  width: min(40rem, 100%);
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem 1.1rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  animation: sg-trail-flip 0.45s ease;
+}
+
+.sg-trail-panel {
+  width: min(26rem, 100%);
+}
+
+@keyframes sg-trail-flip {
+  from {
+    transform: rotateY(88deg);
+    opacity: 0.3;
+  }
+  to {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+.sg-trail-card h2,
+.sg-trail-panel h2 {
+  margin: 0 0 0.35rem;
+  color: var(--navy);
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+}
+
+.sg-trail-q {
+  margin: 0.6rem 0;
+  font-size: clamp(1.45rem, 3.2vw, 2.2rem);
+  line-height: 1.25;
+}
+
+.sg-trail-time {
+  margin: 0.2rem 0 0.6rem;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  color: #7a1f1f;
+  line-height: 1;
+}
+
+.sg-trail-time.done {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: #0e6655;
+}
+
+.sg-trail-hint,
+.sg-trail-note {
+  margin: 0.45rem 0;
+  font-size: 1.2rem;
+}
+
+.sg-trail-answer {
+  margin: 0.35rem 0 0.7rem;
+  padding: 0.45rem 0.75rem;
+  background: #fff8e1;
+  border-radius: 0.45rem;
+  color: var(--navy);
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  line-height: 1.25;
+}
+
+button.sg-trail-answer {
+  display: block;
+  width: 100%;
+  border: 2px dashed #c4a35a;
+  cursor: pointer;
+}
+
+.sg-trail-answer-hidden {
+  color: #7a1f1f;
+}
+
+.sg-trail-answer span {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a1f1f;
+}
+
+.sg-trail-hint a {
+  color: #1a237e;
+  font-weight: 700;
+}
+
+.sg-trail-pass {
+  width: min(28rem, 100%);
+}
+
+.sg-trail-next {
+  width: 100%;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  padding: 1.15rem 1.4rem;
+}
+
+.sg-trail-card .sg-trail-actions,
+.sg-trail-panel .sg-trail-actions {
+  justify-content: center;
+  width: auto;
+  margin-top: 0.8rem;
+}
+
+.sg-trail-card .sg-trail-actions button,
+.sg-trail-panel .sg-trail-actions button {
+  white-space: nowrap;
+}
+
+.sg-trail .sg-trail-card button.sg-ghost,
+.sg-trail .sg-trail-panel button.sg-ghost {
+  color: var(--navy);
+  border-color: var(--navy);
+  background: #fff;
+}
+
+.sg-trail-panel select {
+  font-size: 1.1rem;
+  padding: 0.55rem 0.6rem;
+  margin-right: 0.4rem;
+}
+
+.sg-trail-panel p {
+  font-size: 1.05rem;
+}

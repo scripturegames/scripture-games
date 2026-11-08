@@ -4,7 +4,10 @@
   --gold: #ffff5f;
   --cream: #f7f1e3;
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: var(--lesson-key-h, 0px);
   display: flex;
   flex-direction: column;
   background: var(--navy);
